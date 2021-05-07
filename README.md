@@ -1,18 +1,28 @@
-# Nome do projeto
+# Aprendizado de Crianças
 
-Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
+O principal objetivo deste projeto é conceber uma ferramenta tecnológica que possa auxiliar no aprendizado de crianças.
+Como objetivos específicos podemos ressaltar:
+•	Auxiliar com os estudos das crianças;
+•	Auxiliar pais no acompanhamento dos estudos de seus filhos;
+•	Auxiliar professores com atividades que despertem o interesse dos alunos em aprender;
+•	Construir uma ferramenta que ajude a manter o foco e interesse das crianças no conteúdo passado;
+•	Construir uma ferramenta de fácil acesso e usabilidade, e que, ofereça uma experiência de aprendizado prazerosa.
+
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Fabrício Frades Souza
+* Gabriel Fernandes de Oliveira
+* Lucas Gomes Salles
+* Pedro Lucas Aires dos Santos
+* Pedro Reis de Souza
+* Thilla Bányai Pereira
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Rommel Vieira Carneiro
+* Luciana de Nardin
+* Simone Alves Nogueira
 
 ## Instruções de utilização
 
