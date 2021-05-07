@@ -11,7 +11,7 @@ Como objetivos específicos podemos ressaltar:
 
 ## Alunos integrantes da equipe
 
-* Fabrício Frades Souza
+* Fabrício Frade Sousa
 * Gabriel Fernandes de Oliveira
 * Lucas Gomes Salles
 * Pedro Lucas Aires dos Santos
