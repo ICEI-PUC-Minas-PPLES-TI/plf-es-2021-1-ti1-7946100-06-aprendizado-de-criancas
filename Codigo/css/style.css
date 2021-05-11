@@ -1,9 +1,8 @@
 body{
     background: rgba(194, 181, 181, 0.263);
 }
-div .container{
-    min-width:100%;
-    padding-left:10px;
+.container{
+    max-width:100%;
 }
 /* header */
 header{
@@ -17,10 +16,9 @@ header ul li a.nav-link{
 .nav-link.sidebarLink.dropdown-toggle{
     color:rgb(218, 218, 218);
 }
-header nav.navbar img#imgPerfil{
+#imgPerfil{
     border-radius: 180px;
 }
-
 .navbar .collapse {
     max-height:250px;width:100%;overflow-y:auto;overflow-x:hidden;
 }
@@ -31,6 +29,18 @@ header nav.navbar img#imgPerfil{
     float:none !important;
 
 }
+/* right navbar */
+#rightSidebarContent{
+    padding-top:10%;
+    justify-content:center;
+}
+#countMedal{
+    font-size: 1.5em;
+    padding-top:5%;
+    padding-left: 10%;
+    padding-right: 5%;
+}
+
 /* navbar inferior */
 #downNav{
     height:60px;
@@ -89,6 +99,31 @@ p1{
     color:rgba(43, 40, 40, 0.747);
     border-bottom-style:groove;
 }
+
+/*  Pontos */
+content .chooseAvatar{
+    padding-top:30px;
+    padding-bottom: 30px;
+    background:white;
+    padding-left: 30px;
+}
+
+.chooseAvatar p2{
+    padding-left:4px;
+}
+
+.chooseAvatar h5{
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+content .recommendations{
+    border-top-style: solid;
+    border-color: rgb(106, 168, 222);
+    padding: 20px;
+    background:white;
+
+}
+
 /* Footer */
 footer h5{
     font-family: 'Times New Roman', Times, serif;
@@ -101,7 +136,7 @@ footer h5{
 footer{
     padding-bottom:60px;
     padding-top:20px;
-    background:rgba(215, 215, 215, 0.53);
+    width: 100%;
 
 }
 footer .socialMedia{
@@ -110,6 +145,9 @@ footer .socialMedia{
 }
 
 @media (max-width: 575px) { 
+    .container{
+        min-width:100%;
+    }
     .sidebar{
         display:none;
     }
