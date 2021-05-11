@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/style.css">
+    <!--Font awesome-->
+    <script src="https://kit.fontawesome.com/795f64f375.js" crossorigin="anonymous"></script>
+    <title>Aprendizado Crianças</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <!-- navbar mobile -->
+            <header>
+                <nav class="navbar">
+                    <span class="col-3"><a href="#"><img src="../../Images/perfil.png" width="40px" id="imgPerfil"
+                                alt=""></a></span>
+                    <span class="col-5"><img src="../../Images/Logo.png" width="80px" id="logo" alt="Logo"></span>
+                    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
+                        data-target="#navbar-header" aria-controls="navbar-header">
+                        &#9776;
+                    </button>
+                    <div class="collapse navbar-toggleable-xs" id="navbar-header">
+                        <ul class="list-unstyled components">
+                            <li class="active">
+                                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                            </li>
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                                class="nav-link dropdown-toggle" style="color:black">Matérias</a>
+                            <ul class="nav-link collapse list-unstyled" id="homeSubmenu">
+                                <li><a href="#" class="nav-link" id="dropdownContent">Português</a></li>
+                                <li><a href="#" class="nav-link" id="dropdownContent">Matemática</a></li>
+                            </ul>
+                        </ul>
+                        <form class="form-inline pull-xs-right">
+                            <input class="form-control" type="text" placeholder="Procurar">
+                        </form>
+                    </div>
+                </nav>
+            </header>
+            <!-- Sidebar -->
+            <div class="sidebar col-2">
+                <nav id="sidebar">
+                    <div class="sidebar-header">
+                        <a class="navbar-brand" href="#"><img src="../../Images/Logo.png" width="100px" height="50%"
+                                id="Logo" alt="Logo"></a>
+                    </div>
+                    <span class="sidebarContent">
+                        <span class="row">
+                            <nav class="navbar navbar-light bg-light">
+                            </nav>
+                            <ul class="list-unstyled components">
+                                <a href="#">
+                                    <p class="sidebarLink pb-1 mb-6 border-bottom">Aulas & Exercícios</p>
+                                </a>
+                                <p class="sidebarLink pb-1 mb-6 border-bottom">Matérias</p>
+                                <li class="active">
+                                    <a class="sidebarLink border-bottom" href="#">Português</a>
+                                    <a class="sidebarLink border-bottom" href="#">Matemática</a>
+                            </ul>
+
+                        </span>
+                    </span>
+                </nav>
+                <span class="row">
+                    <a class="sidebarLink border-bottom" href="../../index.html">Tarefas Recomendadas</a>
+                    <a class="sidebarLink border-bottom" href="#">Pontos</a>
+                </span>
+            </div>
+            <!-- Avatar content-->
+            <content class="col-12 col-sm-12 col-md-12 col-lg-8">
+                <div class="chooseAvatar">
+                    <img src="../../Images/perfil.png" width="40px" id="imgPerfil" alt="Perfil">
+                    <p2>Nome Sobrenome</p2>
+                    <h5>Avatares:</h5>
+                    <div class="row avatarContent">
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-2">
+                            <span class="selectAvatar"><img src="../../Images/perfil.png" width="70px"
+                                    class="avatarUnlocked" id="imgPerfil" alt="Perfil"></span>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-2">
+                            <span class="selectAvatar"><img src="../../Images/perfil.png" width="70px"
+                                    class="avatarUnlocked" id="imgPerfil" alt="Perfil">
+                                <p2></p2>
+                            </span>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-2">
+                            <span class="selectAvatar"><img src="../../Images/perfil.png" width="70px"
+                                    class="avatarLocked" id="imgPerfil" alt="Perfil">
+                                <p2>1000<i class="fas fa-medal" id=""></i></p2>
+                            </span>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-2">
+                            <span class="selectAvatar"><img src="../../Images/perfil.png" width="70px"
+                                    class="avatarLocked" id="imgPerfil" alt="Perfil">
+                                <p2>1500<i class="fas fa-medal" id=""></i></p2>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Recommendations-->
+                <div class="row">
+                    <div class="recommendations">
+                        <h4 id="contentTitle" class="border-bottom">Continue Aprendendo:</h4>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-6">
+                                <div class="card cardContent1">
+                                    <h5 class="card-title">Aula 1</h5>
+                                    <p1>Português</p1>
+                                    <img class="card-img-top" src="https://source.unsplash.com/random/300x200"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                            Eius
+                                            alias illum.</p>
+                                        <a href="#">Mais Detalhes</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-6">
+                                <div class="card cardContent1">
+                                    <h5 class="card-title">Aula 2</h5>
+                                    <p1>Matemática</p1>
+                                    <img class="card-img-top" src="https://source.unsplash.com/random/300x200"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                            Eius
+                                            alias illum.</p>
+                                        <a href="#">Mais Detalhes</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </content>
+            <!--Right Sidebar-->
+            <div class="sidebar col-2">
+                <nav id="rightSidebarContent">
+                    <div class="row"><i class="fas fa-medal" id="countMedal"></i>
+                        <h5 style="font-size: 1.0em;">Total de pontos:<br>100</h5>
+                    </div>
+                </nav>
+            </div>
+            <!--Navbar inferior-->
+            <span class="downNav">
+                <div class="d-flex flex-row justify-content-center bg-light fixed-bottom" id="downNav">
+                    <a class="p-2" id="icon1" href="#"><i class="fas fa-home"></i></a>
+                    <a class="p-2" id="icon2" href="#"><i class="fas fa-medal"></i></a>
+                    <a class="p-2" id="icon3" href="#"><i class="fas fa-book"></i></a>
+                </div>
+            </span>
+        </div>
+    </div>
+    <footer class="container">
+        <div class="row">
+            <div class="col-6 socialMedia">
+                <h3 class="pb-3 mb-4 border-bottom">Mais</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" style="text-decoration:none"><i style="color:black;"
+                                class="fab fa-twitter-square"></i> Twitter</a></li>
+                    <li><a href="#" style="text-decoration:none"><i style="color:black;"
+                                class="fab fa-facebook-square"></i> Facebook</a></li>
+                    <li><a href="#" style="text-decoration:none" S><i style="color:black;"
+                                class="fab fa-instagram-square"></i> Instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <h3 class="pb-3 mb-4 border-bottom" style="color:black;">Sobre</h3>
+                <ul class=" flex-column nav justify-content-left">
+                    <li><i class="fas fa-thumbtack"></i>Onde começamos</li>
+                    <li><i class="fas fa-thumbtack"></i>Termos<br></li>
+                    <li><span class="fa fa-star checked"></span>Parcerias</li>
+                </ul>
+            </div>
+        </div>
+        <h5 class="footerText">Projeto Aprendizagem de crianças - ₢ PUC MINAS</h5>
+    </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
