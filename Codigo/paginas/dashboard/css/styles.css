@@ -57,6 +57,11 @@ body {
     padding: 0;
   }
 
+  .nav-section a{
+    text-decoration: none;
+    color: #212529;
+  }
+
   .navbar .accordion-item{
     border-bottom: 1px solid #aaaaaa !important;
   }
@@ -90,10 +95,6 @@ body {
     max-width: 100% !important;
   }
 
-  .container-web #titleMobile{
-    display: none;
-  }
-
   .container-web #titleWeb{
     margin: 1rem;
   }
@@ -124,6 +125,12 @@ body {
     padding: 0;
     margin: 0;
   }
+
+  .card .card-body .card-bottom div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   .card .card-body iframe{
     width: 100% !important;
@@ -139,9 +146,6 @@ body {
   }
 }
 
-
-
-
 @media screen and (max-width: 1024px) {
 
   .navbar{
@@ -150,12 +154,49 @@ body {
     align-items: center !important;
     justify-content: space-between !important;
 
+    padding: .5rem;
+
     width: 100% !important;
     background: #2b81f8;
+  }
+
+  .navbar .accordion{
+    display: none;
+  }
+
+  .responsive .accordion{
+    display: block;
   }
   
   .navbar img{
     max-height: 40px;
+  }
+
+  .nav-section{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background-color: #FFFFFF;
+
+    width: 100%;
+    height: 52px;
+
+    border-bottom: 1px solid #aaaaaa;
+  }
+
+  .nav-section p{
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-section a{
+    text-decoration: none;
+    color: #212529;
+  }
+
+  .navbar .accordion-item{
+    border-bottom: 1px solid #aaaaaa !important;
   }
   
   .navbar i{
@@ -164,14 +205,14 @@ body {
     font-weight: bold;
   }
 
-  .navbar .accordion{
-    display: none;
-  }
-
   .content-all{
     display: flex;
     width: 100%;
     flex-direction: column;
+  }
+
+  .responsive-title {
+    margin-top: 180px !important;
   }
 
   .container-mobile {
