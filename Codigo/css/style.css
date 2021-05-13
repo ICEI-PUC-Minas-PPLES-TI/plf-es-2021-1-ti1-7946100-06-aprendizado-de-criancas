@@ -163,6 +163,13 @@ footer .socialMedia{
     .cardContent1 img{
         width: 100%;
     }
+    .loginBg{
+        background: #70a6f2;
+        height: 100px;
+    }
+    .form-container.loginPage{
+        padding:30px;
+    }
 }
 @media (max-width: 768px) {
     .sidebar{
@@ -180,6 +187,14 @@ footer .socialMedia{
     }
     .cardContent1 img{
         width: 100%;
+    }
+    /* Login Screen */
+    .loginBg{
+        background: #70a6f2;
+        height: 1000px;
+    }
+    .form-container.loginPage{
+        padding:30px;
     }
 }
 @media (min-width:769px) and (max-width: 991px){
@@ -199,12 +214,14 @@ footer .socialMedia{
         width: 100%;
     }
     /* Login Screen */
-.loginContent{
-    margin: 5% 20% 5% 20%;
-    background-color: white;
-    padding: 4rem 12rem 4rem 12rem;
-    border-radius: 10px;
-}
+
+    .loginBg{
+        background: #70a6f2;
+        height: 991px;
+    }
+    .form-container.loginPage{
+        padding:30px 150px 30px 150px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -251,15 +268,22 @@ footer .socialMedia{
     .cardContent1 img{
         width: 100%;
     }
+    .loginBg{
+        background: #70a6f2;
+        height: 1280px;
+    }
+    /* Login Screen */
+    .form-container.loginPage{
+        padding:30px 150px 30px 150px;
+    }
+    
     
 }
 /* Login Screen */
-.loginContent{
-    margin: 5% 20% 5% 20%;
-    background-color: white;
-    padding: 4rem 12rem 4rem 12rem;
+.form-container.loginPage{
+    background-color:white;
+    box-shadow: 0px 0px 10px 0px black;
     border-radius: 10px;
-}
-.loginPageBG{
-    background-color:#70a6f2;
+    position: relative;
+    top:18vh;
 }

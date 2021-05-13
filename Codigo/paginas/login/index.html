@@ -8,37 +8,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/style.css">
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <title>Login template screen</title>
 </head>
-
-<body class="loginPageBG">
-        <div class="container">
-            <div class="row loginContent" align="center">
-                <div class="col-12">
-                    <img src="../../Images/Logo.png" width="100px" id="logo" alt="Logo"><label>Logo</label>
-                    <h2 class="pb-4">Login</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            <div class="row"><div class="col-6 text-left"><a href="#"><small>Esqueci a senha!</small></a></div><div class="col-6 text-right"><a href="#"><small>Cadastre-se!</small></a></div></div>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Manter-se Conectado</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-sm btn-block">Entrar</button>
-                    </form>
-                </div>
+<body>
+    <section class="container-fluid loginBg">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-6 col-md-12 col-lg-6">
+                <form class="form-container loginPage">
+                    <div class="row justify-content-center"><img src="../../Images/Logo.png" width="100px" id="logo" alt="Logo"></div>
+                    <div class="row justify-content-center"><small>Logo</small></div>
+                    <div class="form-group">
+                      <h3 class="text-center pb-4">Login</h3>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                      <a href="#"><small class="forgPassword">Esqueci minha senha!<br></small></a>
+                      <a href="#"><small class="signUp">Registre-se!</small></a>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label pb-3" for="exampleCheck1">Manter-se Conectado!</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                    <h5 class="pt-2 text-center">Ou entre com:</h5>
+                    <div class="row signInWith"><small>APIs</small></div>
+                  </form>
             </div>
         </div>
-        <!-- Responsividade ainda não implementada -->
+    </section>
+</body>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
