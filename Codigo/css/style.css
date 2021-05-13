@@ -198,6 +198,13 @@ footer .socialMedia{
     .cardContent1 img{
         width: 100%;
     }
+    /* Login Screen */
+.loginContent{
+    margin: 5% 20% 5% 20%;
+    background-color: white;
+    padding: 4rem 12rem 4rem 12rem;
+    border-radius: 10px;
+}
 }
 
 @media (min-width: 992px) {
@@ -244,4 +251,15 @@ footer .socialMedia{
     .cardContent1 img{
         width: 100%;
     }
+    
+}
+/* Login Screen */
+.loginContent{
+    margin: 5% 20% 5% 20%;
+    background-color: white;
+    padding: 4rem 12rem 4rem 12rem;
+    border-radius: 10px;
+}
+.loginPageBG{
+    background-color:#70a6f2;
 }
