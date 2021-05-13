@@ -66,6 +66,10 @@ body {
     border-bottom: 1px solid #aaaaaa !important;
   }
 
+  .navbar .accordion-body p{
+    cursor: pointer;
+  }
+
   .nav-icon{
     display: none;
   }
@@ -203,6 +207,10 @@ body {
     color: #ffffff;
     font-size: 2rem;
     font-weight: bold;
+  }
+
+  .navbar .accordion-body p{
+    cursor: pointer;
   }
 
   .content-all{
