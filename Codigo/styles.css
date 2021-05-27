@@ -1,5 +1,5 @@
-body {
-
+.link-nav:hover{
+  cursor: pointer
 }
 
 @media screen and (min-width: 1025px){

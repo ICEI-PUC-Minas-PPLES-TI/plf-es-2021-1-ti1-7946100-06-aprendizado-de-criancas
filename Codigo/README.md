@@ -1,3 +1,3 @@
 # Código do Projeto
 
-//teste thilla commit
+Desenvolvido em HTML, CSS e Javascript
