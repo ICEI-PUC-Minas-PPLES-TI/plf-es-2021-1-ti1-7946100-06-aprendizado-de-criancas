@@ -16,9 +16,32 @@ header ul li a.nav-link{
 .nav-link.sidebarLink.dropdown-toggle{
     color:rgb(218, 218, 218);
 }
-#imgPerfil{
+
+.imgPerfil{
     border-radius: 180px;
+    width: 70px ; 
+    height: 70px;
 }
+
+.selectAvatar #imgPerfil{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.npontos{
+    float: right;
+    padding-right: 100px;
+}
+
+.chooseAvatar{
+    margin-left: 0px;
+    width: 100%;
+}
+
+.nome{
+    margin-left: 20px;
+}
+
 .navbar .collapse {
     max-height:250px;width:100%;overflow-y:auto;overflow-x:hidden;
 }
