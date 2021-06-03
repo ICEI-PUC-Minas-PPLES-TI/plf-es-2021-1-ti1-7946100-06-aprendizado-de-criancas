@@ -46,8 +46,8 @@
                     <ul class="dropdown-menu">
                         <li id="atv-port-btn"><a class="dropdown-item" href="#">Português</a></li>
                         <li id="atv-mat1-btn"><a class="dropdown-item" href="#">Matemática - Adição e Subtração</a></li>
-                        <li id="atv-mat2-btn"><a class="dropdown-item" href="#">Matemática - Multiplicação e Divisão</a>
-                        </li>
+                        <li id="atv-mat2-btn"><a class="dropdown-item" href="#">Matemática - Multiplicação e Divisão</a></li>
+                        <li id="atv-mat2-btn"><a class="dropdown-item" href="#">Geografia</a></li>
                         <li id="atv-recom-btn"><a class="dropdown-item" href="#">Tarefas Recomendadas</a></li>
                     </ul>
                 </li>
@@ -72,6 +72,7 @@
                 <div id="conteudoMat2" class="main-content"></div>
                 <div id="conteudoPerfil" class="main-content"></div>
                 <div id="conteudoAtvRecom" class="main-content"></div>
+                <div id="conteudoGeografia" class="main-content"></div>
             </div>
 
         </div>
@@ -89,7 +90,6 @@
         $(document).ready(function () {
 
             $("#conteudoDash").load("./paginas/dashboard/index.html");
-            $("#conteudoDash").hide();
             $("#conteudoPort").load("./paginas/atividades/atividadePort/index.html");
             $("#conteudoPort").hide();
             $("#conteudoMat1").load("./paginas/atividades/atividadeMat1/index.html");
@@ -98,6 +98,8 @@
             $("#conteudoMat2").hide();
             $("#conteudoPerfil").load("./paginas/pontos/index.html");
             $("#conteudoPerfil").hide();
+            $("#conteudoAtvRecom").load("./paginas/atividadesMatematica/index.html");
+            $("#conteudoAtvRecom").hide();
             $("#conteudoAtvRecom").load("./paginas/atividadesMatematica/index.html");
             $("#conteudoAtvRecom").hide();
 
