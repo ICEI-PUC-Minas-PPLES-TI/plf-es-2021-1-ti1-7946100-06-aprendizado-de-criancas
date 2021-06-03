@@ -1,3 +1,128 @@
+body{
+    background: rgba(194, 181, 181, 0.263);
+}
+.container{
+    max-width:100%;
+}
+/* header */
+header{
+    background: rgb(39, 140, 255);
+    width: 100%;
+    display:inline-block;
+}
+header ul li a.nav-link{
+    color:white;
+}
+.nav-link.sidebarLink.dropdown-toggle{
+    color:rgb(218, 218, 218);
+}
+
+.imgPerfil{
+    border-radius: 180px;
+    width: 70px ; 
+    height: 70px;
+}
+
+.selectAvatar #imgPerfil{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.npontos{
+    float: right;
+    padding-right: 100px;
+}
+
+.chooseAvatar{
+    margin-left: 0px;
+    width: 100%;
+}
+
+.nome{
+    margin-left: 20px;
+}
+
+.navbar .collapse {
+    max-height:250px;width:100%;overflow-y:auto;overflow-x:hidden;
+}
+.navbar .navbar-nav>.nav-item {
+    float: none; margin-left: .1rem;
+}
+.navbar .navbar-nav {
+    float:none !important;
+
+}
+/* right navbar */
+#rightSidebarContent{
+    padding-top:10%;
+    justify-content:center;
+}
+#countMedal{
+    font-size: 1.5em;
+    padding-top:5%;
+    padding-left: 10%;
+    padding-right: 5%;
+}
+
+/* navbar inferior */
+#downNav{
+    height:60px;
+}
+#downNav i{
+    font-size:2.5em;
+    color:black;
+}
+#downNav #icon1 i{
+    
+    padding-left:20px;
+    padding-right:20px;
+}
+#downNav #icon3 i{
+    padding-left:20px;
+    padding-right:30px;
+
+}
+
+#downNav #icon2 i{
+    padding-right: 35px;
+    padding-left: 35px;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-style: thin;
+
+}
+#downNav a{
+    background:white;
+}
+
+.nav-item{
+    width:100%;text-align:left;
+}
+.navbar .collapse .dropdown-menu {
+  position: relative;
+  float: none;
+  background:none;
+  border:none;
+}
+/* Textos */
+.mainTitle{
+    padding-bottom: 20px;
+    justify-content: center;
+    font-size: 1.9em;
+    display:flex;
+    padding-top:30px;
+    width:100%;
+    border-bottom-style: solid;
+}
+p1{
+    padding-bottom:8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:1em;
+    color:rgba(43, 40, 40, 0.747);
+    border-bottom-style:groove;
+}
+
 /*  Pontos */
 content .chooseAvatar{
     padding-top:30px;
