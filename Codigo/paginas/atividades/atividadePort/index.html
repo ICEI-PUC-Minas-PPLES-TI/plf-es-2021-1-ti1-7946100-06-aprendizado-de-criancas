@@ -2,84 +2,47 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="css/styles.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
   <title>Atividades Português 1</title>
 </head>
 
+<style>
+  
+</style>
+
 <body>
-  <div class="container-fluid">
-    <nav id="topnav" class="navbar navbar-expand-lg navbar-light fixed-top">
-      <div class="nav-icon">
-        <i id="iconList" class="bi bi-list"></i>
-      </div>
-      <div class="nav-logo">
-        <img src="./img/logo.png" alt="" />
-      </div>
-      <div class="nav-avatar">
-        <img src="./img/avatar.png" alt="" />
-      </div>
-      <div class="accordion accordion-flush w-100" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              Aulas e exercícios
-            </button>
-          </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-            data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-              <p>Português</p>
-              <p>Matemática</p>
-            </div>
-          </div>
-        </div>
-        <div class="nav-section">
-          <p>
-            <a href="#">Tarefas recomendadas </a>
-          </p>
-        </div>
-        <div class="nav-section">
-          <p>
-            <a href="../pontos/index.html"> Pontos </a>
-          </p>
-        </div>
-      </div>
-    </nav>
-    <div class="content">
-      <h1 id="title">Aprendendo novas palavras!</h1>
-      <h3 class="pb-4 text-center">
+    <div id="#PortuguesContent" style="width:100%; height: 100%;">
+      <h3 id="title">Aprendendo novas palavras!</h3>
+      <h6 class="pb-4 text-center">
         Confira os seguintes jogos disponiveis nesta atividade:
-      </h3>
+      </h6>
       <p class="pb-1">Caça-palavras</p>
-      <iframe id="educaTeste" name="educaTeste" width="795" height="690" frameborder="0"
+      <iframe id="educaTeste" name="educaTeste" width="100%" height="80%"
         src="https://www.educaplay.com/game/9516774-caca_palavras.html"></iframe>
         <h6>Insira aqui, as palavras que você encontrou na atividade</h6>
-        <div class="respostas">
-      <form action="" class="form respostas" id="form">
-        <div class="form-group">
-          <div class="col-sm-10">
-            <input class="form-control form-control-sm" autocomplete="off" id="resposta1" type="text"
-              placeholder="Resposta" />
-            <input class="form-control form-control-sm" autocomplete="off" id="resposta2" type="text"
-              placeholder="Resposta" />
-            <input class="form-control form-control-sm" autocomplete="off" id="resposta3" type="text"
-              placeholder="Resposta" />
-            <input class="form-control form-control-sm" autocomplete="off" id="resposta4" type="text"
-              placeholder="Resposta" />
-            <input class="form-control form-control-sm" autocomplete="off" id="resposta5" type="text"
-              placeholder="Resposta" />
-            <button type="submit" class="btn btn-warning">Enviar</button>
-          </div>
+
+        <div class="respostas" style="width:60%; text-align: center;">
+
+          <form class="form" id="form">
+            <div class="form-group">
+              <div class="col-sm-10">
+                <input class="form-control form-control-sm" autocomplete="off" id="resposta1" type="text"
+                  placeholder="Resposta" />
+                <input class="form-control form-control-sm" autocomplete="off" id="resposta2" type="text"
+                  placeholder="Resposta" />
+                <input class="form-control form-control-sm" autocomplete="off" id="resposta3" type="text"
+                  placeholder="Resposta" />
+                <input class="form-control form-control-sm" autocomplete="off" id="resposta4" type="text"
+                  placeholder="Resposta" />
+                <input class="form-control form-control-sm" autocomplete="off" id="resposta5" type="text"
+                  placeholder="Resposta" />
+                <button type="submit" class="btn btn-warning" style="width:100px;margin:0 auto">Enviar</button>
+              </div>
+            </div>
+          </form>
+      
         </div>
-      </form>
-      <button class="btn btn-primary mb-5" id="visualizar" data-bs-toggle="modal" data-bs-target="#exampleModal">Visualizar Notas</button>
+
+      <button class="btn btn-primary mb-5" style="width:300px;margin:0 auto" id="visualizar" data-bs-toggle="modal" data-bs-target="#exampleModal">Visualizar Notas</button>
 
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -97,32 +60,15 @@
           </div>
         </div>
       </div>
-    </div>
-    </div>
+
   </div>
-  <footer class="fixed-bottom">
-    <div>
-      <a href="#">
-        <img href="#" src="./img/home.png" alt="" />
-      </a>
-    </div>
-    <div>
-      <a href="../pontos/index.html">
-        <img href="../" src="./img/award.png" alt="" />
-      </a>
-    </div>
-    <div>
-      <a href="#">
-        <img src="./img/book.png" alt="" />
-      </a>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
-    crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>   
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+  crossorigin="anonymous"></script>
   <script src="./script.js"></script>
   <script>
     var respostas = [
