@@ -35,20 +35,21 @@
                   placeholder="Resposta" />
                 <input class="form-control form-control-sm" autocomplete="off" id="resposta5" type="text"
                   placeholder="Resposta" />
-                <button type="submit" class="btn btn-warning" style="width:100px;margin:0 auto">Enviar</button>
               </div>
+              <button type="submit" class="btn btn-warning" style="width:100px;margin:0 auto">Enviar</button>
             </div>
           </form>
       
         </div>
 
-      <button class="btn btn-primary mb-5" style="width:300px;margin:0 auto" id="visualizar" data-bs-toggle="modal" data-bs-target="#exampleModal">Visualizar Notas</button>
+      <button class="btn btn-primary mb-5" style="width:300px;margin:0 auto" 
+      id="visualizar" data-bs-toggle="modal" data-bs-target="#modalPortugues">Visualizar Notas</button>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="modalPortugues" tabindex="-1" aria-labelledby="modalPortuguesLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Nota!</h5>
+              <h5 class="modal-title" id="modalPortuguesLabel">Nota!</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -71,6 +72,7 @@
   crossorigin="anonymous"></script>
   <script src="./script.js"></script>
   <script>
+
     var respostas = [
       'portugues',
       'Portugues',
@@ -91,6 +93,7 @@
       'história',
       'História',
     ];
+
     const resposta1 = document.getElementById('resposta1');
     const resposta2 = document.getElementById('resposta2');
     const resposta3 = document.getElementById('resposta3');
@@ -126,16 +129,16 @@
         }
       }
     localStorage.setItem('Pontuacao', score);
-   // console.log(score);
+    //console.log(score);
   });
 
   function imprimeNota() {
-      let text = localStorage.getItem('Pontuacao');
-      document.getElementById(
-        'divext'
-      ).innerHTML = `Sua nota total foi ${text}!`;
-    }
-    document.getElementById('visualizar').addEventListener('click', imprimeNota);
+    let text = localStorage.getItem('Pontuacao');
+    document.getElementById('divText').innerHTML = `Sua nota total foi ${text}!`;
+    $('#modalPortugues').insertAfter($('body'));
+  }
+
+  document.getElementById('visualizar').addEventListener('click', imprimeNota);
 
   </script>
 </body>

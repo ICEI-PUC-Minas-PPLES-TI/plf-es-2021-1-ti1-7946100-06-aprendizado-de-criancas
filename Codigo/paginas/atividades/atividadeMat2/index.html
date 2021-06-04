@@ -16,28 +16,28 @@
         <form>
             <div class="d-flex flex-column mb-3">
                 <label for="">Digite a nota da atividade 1:</label>
-                <input type="text" id="nota1">
+                <input type="text" id="nota1mat2">
             </div>
             <div class="d-flex flex-column mb-3">
                 <label for="">Digite a nota da atividade 2:</label>
-                <input type="text" id="nota2">
+                <input type="text" id="nota2mat2">
             </div>
-            <button class="btn btn-success mb-5" id="btnEnviar">Enviar notas</button>
+            <button class="btn btn-success mb-5" id="btnEnviarMat2">Enviar notas</button>
             
         </form>
 
-        <button class="btn btn-primary mb-5" id="btnVisualizar" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">Visualizar nota</button>
+        <button class="btn btn-primary mb-5" id="btnVisualizarMat2" data-bs-toggle="modal"
+                data-bs-target="#modalMat2">Visualizar nota</button>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalMat2" tabindex="-1" aria-labelledby="modalMat2Label" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="modalMat2Label">Nota!</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div id="divText"></div>
+                        <div id="divTextMat2"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
@@ -57,21 +57,23 @@
     <script src="script.js"></script>
     <script>
         function cadastrarNota() {
-            if (localStorage.getItem('nota') !== null) {
-                localStorage.removeItem('nota');
+            if (localStorage.getItem('notaMat2') !== null) {
+                localStorage.removeItem('notaMat2');
             }
 
-            let nota = Number(document.getElementById('nota1').value) + Number(document.getElementById('nota2').value);
-            localStorage.setItem('nota', nota);
+            let nota = Number(document.getElementById('nota1mat2').value) + Number(document.getElementById('nota2mat2').value);
+            localStorage.setItem('notaMat2', nota);
         }
 
         function imprimeNota() {
-            let text = localStorage.getItem('nota');
-            document.getElementById('divText').innerHTML = `Sua nota total foi ${text}!`;
+            let text = localStorage.getItem('notaMat2');
+            document.getElementById('divTextMat2').innerHTML = `Sua nota total foi ${text}!`;
+            $('#modalMat2').insertAfter($('body'));
         }
 
-        document.getElementById('btnEnviar').addEventListener('click', cadastrarNota);
-        document.getElementById('btnVisualizar').addEventListener('click', imprimeNota);
+        document.getElementById('btnEnviarMat2').addEventListener('click', cadastrarNota);
+        document.getElementById('btnVisualizarMat2').addEventListener('click', imprimeNota);
+
     </script>
 </body>
 

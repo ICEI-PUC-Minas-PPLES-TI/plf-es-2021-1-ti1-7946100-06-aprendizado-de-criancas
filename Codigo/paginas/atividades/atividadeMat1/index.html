@@ -23,17 +23,17 @@
         </form>
 
         <button class="btn btn-primary mb-5" id="btnVisualizar" data-bs-toggle="modal"
-            data-bs-target="#exampleModal">Visualizar nota</button>
+            data-bs-target="#modalMat1">Visualizar nota</button>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalMat1" tabindex="-1" aria-labelledby="modalMat1Label" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="modalMat1Label">Nota!</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div id="divText"></div>
+                        <div id="divTextMat1"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
@@ -58,16 +58,19 @@
             }
 
             let nota = Number(document.getElementById('nota1').value) + Number(document.getElementById('nota2').value);
+
             localStorage.setItem('nota', nota);
         }
 
         function imprimeNota() {
             let text = localStorage.getItem('nota');
-            document.getElementById('divText').innerHTML = `Sua nota total foi ${text}!`;
+            document.getElementById('divTextMat1').innerHTML = `Sua nota total foi ${text}!`;
+            $('#modalMat1').insertAfter($('body'));
         }
 
         document.getElementById('btnEnviar').addEventListener('click', cadastrarNota);
         document.getElementById('btnVisualizar').addEventListener('click', imprimeNota);
+
     </script>
 </body>
 

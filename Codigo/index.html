@@ -103,6 +103,8 @@
 
             $("#home-btn").click(function () {
                 $("#conteudoDash").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
                     if (pages[i] != "#conteudoDash") {
                         $(pages[i]).hide();
@@ -112,8 +114,8 @@
 
             $("#atv-port-btn").click(function () {
                 $("#conteudoPort").show();
-                $("#conteudoAtvRecom").show();
                 $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
                     if (pages[i] != "#conteudoPort") {
                         $(pages[i]).hide();
@@ -123,8 +125,8 @@
 
             $("#atv-mat1-btn").click(function () {
                 $("#conteudoMat1").show();
-                $("#conteudoAtvRecom").show();
                 $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
                     if (pages[i] != "#conteudoMat1") {
                         $(pages[i]).hide();
@@ -134,8 +136,8 @@
 
             $("#atv-mat2-btn").click(function () {
                 $("#conteudoMat2").show();
-                $("#conteudoAtvRecom").show();
                 $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
                     if (pages[i] != "#conteudoMat2") {
                         $(pages[i]).hide();
@@ -156,6 +158,8 @@
 
             $("#perfil-btn").click(function () {
                 $("#conteudoPerfil").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
                     if (pages[i] != "#conteudoPerfil") {
                         $(pages[i]).hide();
@@ -165,8 +169,8 @@
 
             $('#btnToggle').click(function (){
                if($("#contentToggle").hasClass('show')){
-                  $('#contentToggle').removeClass('show');
-                  $('#contentToggle').addClass('hide');
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
                } else {
                   $('#contentToggle').removeClass('hide');
                   $('#contentToggle').addClass('show');
