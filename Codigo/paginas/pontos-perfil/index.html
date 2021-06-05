@@ -12,7 +12,10 @@
             <div class="chooseAvatar row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-4" style="width: 100%; display: flex; justify-content: space-between;">
                     <div>
-                        <i class="fas fa-user" style="font-size:50px"></i>
+                        <div id="perfilFoto">
+                            <img src="https://picsum.photos/id/555/70"
+                            class="avatarUnlocked imgPerfil" alt="Perfil">
+                        </div>
                         <p class="nome">Nome Sobrenome</p>
                     </div>
                     <div>
@@ -20,34 +23,39 @@
                         <h5 class="npontos">Nível: <span class="pontos">1</span></h5>
                     </div>
                 </div>
-                <h5>Avatares:</h5>
+                
                 <div class="row avatarContent" id="#perfilSelec">
+                    <h6>Avatares:</h6>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
                         <span class="selectAvatar">
                             <span class="selectAvatar mb-2">
-                                <i class="fas fa-user avatarUnlocked" style="font-size:50px"></i>
+                                <img id="avatar1" src="https://picsum.photos/id/555/70"
+                                class="avatarUnlocked imgPerfil" alt="Perfil">
                             </span>
                             <br />
-                            <span>atual <i class="fas fa-check" style="font-size:25px"></i></span>
+                            <span>liberado</span>
                         </span>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
-                        <span class="selectAvatar mb-2"><img src="https://picsum.photos/id/237/70"
-                            class="avatarUnlocked imgPerfil" id="avatar4" alt="Perfil">
+                        <span class="selectAvatar mb-2" >
+                            <img id="avatar2" src="https://picsum.photos/id/237/70"
+                            class="avatarUnlocked imgPerfil" alt="Perfil">
                         </span>
                         <br />
                         <span>liberado</span>
                     </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-2">
-                        <span class="selectAvatar mb-2"><img src="https://picsum.photos/id/1003/70"
-                            class="avatarLocked imgPerfil" id="avatar4" alt="Perfil">
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-2" >
+                        <span class="selectAvatar mb-2" data-toggle="tooltip" data-placement="top" title="Este avatar ainda está bloquado">
+                            <img id="avatar3" src="https://picsum.photos/id/1003/70"
+                            class="avatarLocked imgPerfil" alt="Perfil">
                         </span>
                         <br />
                         <span>1000 <i class="fas fa-coins" style="font-size:25px"></i></span>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
-                        <span class="selectAvatar mb-2"><img src="https://picsum.photos/id/1074/70"
-                                class="avatarLocked imgPerfil" id="avatar4" alt="Perfil">
+                        <span class="selectAvatar mb-2" data-toggle="tooltip" data-placement="top" title="Este avatar ainda está bloquado">
+                            <img id="avatar4" src="https://picsum.photos/id/1074/70"
+                                class="avatarLocked imgPerfil" alt="Perfil">
                        </span>
                        <br />
                        <span>1500 <i class="fas fa-coins" style="font-size:25px"></i></span>
@@ -100,6 +108,37 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+
+            $("#avatar2").click(function(){
+                var codigo = $("#avatar2").clone();
+                $("#perfilFoto").empty();
+                $("#perfilFoto").append(codigo); 
+            });
+
+            $("#avatar1").click(function(){
+                var codigo = $("#avatar1").clone();
+                $("#perfilFoto").empty();
+                $("#perfilFoto").append(codigo); 
+            });
+
+            //let ponto = parseInt($(".pontos").text()); 
+            //$(".pontos").text(); //recuperar do local storage e colocar dentro de text() quando conseguirem pegar os pontos
+            $("#perfilSelec").attr("src", (localStorage.getItem("avatar")));
+                $(".avatarUnlocked").click(function(){
+                    if(($(this).attr("src")!=$("#perfilSelec").attr("src"))==true){
+                        if ((confirm("Quer usar essa foto de perfil?"))==true){
+                            $("#perfilSelec").attr("src", ($(this).attr("src")));
+                            localStorage.setItem("avatar",($(this).attr("src")));
+                            var avatar = localStorage.getItem("avatar");
+                            console.log("A imagem salva em localStorage é:" + avatar)
+                        }
+                    }
+            });
+        });
+    </script>
 </body>
 
 </html>
