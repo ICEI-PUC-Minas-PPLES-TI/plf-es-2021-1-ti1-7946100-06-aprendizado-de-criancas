@@ -1,34 +1,44 @@
-body{
-    background: rgba(194, 181, 181, 0.263);
-}
-.container{
-    max-width:100%;
-}
-/* header */
-header{
-    background: rgb(39, 140, 255);
+#Perfil{
     width: 100%;
-    display:inline-block;
+    height: 100%;
 }
-header ul li a.nav-link{
-    color:white;
-}
-.nav-link.sidebarLink.dropdown-toggle{
-    color:rgb(218, 218, 218);
-}
-#imgPerfil{
-    border-radius: 180px;
-}
-.navbar .collapse {
-    max-height:250px;width:100%;overflow-y:auto;overflow-x:hidden;
-}
-.navbar .navbar-nav>.nav-item {
-    float: none; margin-left: .1rem;
-}
-.navbar .navbar-nav {
-    float:none !important;
+
+/* Login Screen */
+.form-container.loginPage{
+    background-color:white;
+    box-shadow: 0px 0px 10px 0px black;
+    border-radius: 10px;
 
 }
+.hyperColor{
+    color: white;
+}
+
+.imgPerfil{
+    border-radius: 180px;
+    width: 70px ; 
+    height: 70px;
+}
+
+.selectAvatar #imgPerfil{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.npontos{
+    float: right;
+    padding-right: 100px;
+}
+
+.chooseAvatar{
+    margin-left: 0px;
+    width: 100%;
+}
+
+.nome{
+    margin-left: 20px;
+}
+
 /* right navbar */
 #rightSidebarContent{
     padding-top:10%;
@@ -41,47 +51,6 @@ header ul li a.nav-link{
     padding-right: 5%;
 }
 
-/* navbar inferior */
-#downNav{
-    height:60px;
-}
-#downNav i{
-    font-size:2.5em;
-    color:black;
-}
-#downNav #icon1 i{
-    
-    padding-left:20px;
-    padding-right:20px;
-}
-#downNav #icon3 i{
-    padding-left:20px;
-    padding-right:30px;
-
-}
-
-#downNav #icon2 i{
-    padding-right: 35px;
-    padding-left: 35px;
-    border-left-style: solid;
-    border-right-style: solid;
-    border-color: rgb(255, 255, 255);
-    border-style: thin;
-
-}
-#downNav a{
-    background:white;
-}
-
-.nav-item{
-    width:100%;text-align:left;
-}
-.navbar .collapse .dropdown-menu {
-  position: relative;
-  float: none;
-  background:none;
-  border:none;
-}
 /* Textos */
 .mainTitle{
     padding-bottom: 20px;
@@ -121,36 +90,8 @@ content .recommendations{
     border-color: rgb(106, 168, 222);
     padding: 20px;
     background:white;
-
 }
-
-/* Footer */
-footer h5{
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    color:rgb(39, 140, 255);
-    font-size: 1.5em;
-    border-color:rgba(84, 80, 80, 0.589);
-    border-top-style: solid;
-}
-footer{
-    padding-bottom:60px;
-    padding-top:20px;
-    width: 100%;
-
-}
-footer .socialMedia{
-    border-right-style:solid; 
-    border-color:rgba(84, 80, 80, 0.589);
-}
-
 @media (max-width: 575px) { 
-    .container{
-        min-width:100%;
-    }
-    .sidebar{
-        display:none;
-    }
     .card-title{
         padding-top:2%;
     }
@@ -172,9 +113,6 @@ footer .socialMedia{
     }
 }
 @media (max-width: 768px) {
-    .sidebar{
-        display:none;
-    }
     .card-title{
         padding-top:2%;
         padding-left:2%;
@@ -198,9 +136,6 @@ footer .socialMedia{
     }
 }
 @media (min-width:769px) and (max-width: 991px){
-    .sidebar{
-        display:none;
-    }
     .card-title{
         padding-top:2%;
     }
@@ -225,35 +160,6 @@ footer .socialMedia{
 }
 
 @media (min-width: 992px) {
-    .downNav{
-        display:none;
-    }
-    .mainTitle{
-        display:none;
-    }
-    h4{
-        padding-top:20px;
-    }
-    header{
-        display:none;
-    } 
-    .sidebar{
-        border-style:inset;
-        border-radius: 10px;
-        border-width: thin;
-        border-color: rgba(7, 7, 7, 0.119);
-        background:white;
-        
-    }
-    .sidebar #logo img{
-        max-height:10%;
-        max-width:10%;
-        background: black;
-    }
-    .sidebarLink{
-        padding-top:10%;
-        padding-left:10%;
-    }
     .card-title{
         padding-top:2%;
         padding-left:2%;
@@ -275,18 +181,5 @@ footer .socialMedia{
     /* Login Screen */
     .form-container.loginPage{
         padding:30px 150px 30px 150px;
-    }
-    
-    
-}
-/* Login Screen */
-.form-container.loginPage{
-    background-color:white;
-    box-shadow: 0px 0px 10px 0px black;
-    border-radius: 10px;
-    position: relative;
-    top:18vh;
-}
-.hyperColor{
-    color: white;
+    }    
 }

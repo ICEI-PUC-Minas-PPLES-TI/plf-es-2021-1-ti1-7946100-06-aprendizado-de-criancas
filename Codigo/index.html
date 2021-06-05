@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <!-- CSS das paginas -->
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <link rel="stylesheet" type="text/css" href="./paginas/dashboard/style.css">
+    <link rel="stylesheet" type="text/css" href="./paginas/atividades/atividadePort/css/styles.css" >
+    <link rel="stylesheet" type="text/css" href="./paginas/atividades/atividadeMat2/css/styles.css" >
+    <link rel="stylesheet" type="text/css" href="./paginas/atividades/atividadeMat1/css/styles.css" >
+    <link rel="stylesheet" type="text/css" href="./paginas/pontos/style.css">
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+    <title>Hora de Aprender</title>
+</head>
+
+<body class="content-all m-0 p-0">
+
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="./assets/imgDashboard/logo.png" alt="logo Hora de Brincar">
+            </div>
+
+            <ul class="list-unstyled components">
+                <li id="home-btn">
+                    <a href="#">Home</a>
+                </li>
+                <li id="perfil-btn">
+                    <a href="#">Perfil</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="btnToggle" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#tarefas" role="button"
+                        aria-expanded="false">Tarefas</a>
+                    <ul id="contentToggle" class="dropdown-menu">
+                        <li id="atv-port-btn"><a class="dropdown-item" href="#">Português</a></li>
+                        <li id="atv-mat1-btn"><a class="dropdown-item" href="#">Matemática - Adição e Subtração</a></li>
+                        <li id="atv-mat2-btn"><a class="dropdown-item" href="#">Matemática - Multiplicação e Divisão</a></li>
+                        <li id="atv-recom-btn"><a class="dropdown-item" href="#">Tarefas Recomendadas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+            <nav class="navbar navbar-expand-lg content-navbar mb-0">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- onde está todo o conteúdo -->
+            <div class="container-fluid">
+                <div id="conteudoDash" class="main-content"></div>
+                <div id="conteudoPort" class="main-content"></div>
+                <div id="conteudoMat1" class="main-content"></div>
+                <div id="conteudoMat2" class="main-content"></div>
+                <div id="conteudoPerfil" class="main-content"></div>
+                <div id="conteudoAtvRecom" class="main-content"></div>
+                <div id="conteudoGeografia" class="main-content"></div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#conteudoDash").load("./paginas/dashboard/index.html");
+            $("#conteudoPort").load("./paginas/atividades/atividadePort/index.html");
+            $("#conteudoPort").hide();
+            $("#conteudoMat1").load("./paginas/atividades/atividadeMat1/index.html");
+            $("#conteudoMat1").hide();
+            $("#conteudoMat2").load("./paginas/atividades/atividadeMat2/index.html");
+            $("#conteudoMat2").hide();
+            $("#conteudoPerfil").load("./paginas/pontos-perfil/index.html");
+            $("#conteudoPerfil").hide();
+            $("#conteudoAtvRecom").load("./paginas/atividadesMatematica/index.html");
+            $("#conteudoAtvRecom").hide();
+            $("#conteudoAtvRecom").load("./paginas/atividadesMatematica/index.html");
+            $("#conteudoAtvRecom").hide();
+
+            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom"];
+
+            $("#home-btn").click(function () {
+                $("#conteudoDash").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoDash") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+
+            $("#atv-port-btn").click(function () {
+                $("#conteudoPort").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoPort") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+
+            $("#atv-mat1-btn").click(function () {
+                $("#conteudoMat1").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoMat1") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+
+            $("#atv-mat2-btn").click(function () {
+                $("#conteudoMat2").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoMat2") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+
+            $("#atv-recom-btn").click(function () {
+                $("#conteudoAtvRecom").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoAtvRecom") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+
+            $("#perfil-btn").click(function () {
+                $("#conteudoPerfil").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoPerfil") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+
+            $('#btnToggle').click(function (){
+               if($("#contentToggle").hasClass('show')){
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+               } else {
+                  $('#contentToggle').removeClass('hide');
+                  $('#contentToggle').addClass('show');
+               }
+            })     
+        });
+    </script>
+</body>
+
+</html>

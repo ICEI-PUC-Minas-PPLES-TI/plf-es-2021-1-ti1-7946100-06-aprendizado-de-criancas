@@ -1,0 +1,134 @@
+#dashBoard{
+    width: 100%;
+    height: 100%;
+}
+
+.container-mobile{
+    display: none;
+}
+
+.container-web {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: start !important;
+
+    /* margin-left: 20vw; */
+
+    padding-top: 40px;
+
+    background: #EFF2F7 !important;
+
+    width: 100%;
+
+    max-width: 100% !important;
+}
+
+.container-web #titleWeb {
+    margin: 1rem;
+}
+
+.content-card {
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+.card {
+    max-width: 350px !important;
+    max-height: 450px !important;
+
+    margin: 10px !important;
+}
+
+.card .card-body .card-text {
+    padding: 0 !important;
+}
+
+.card .card-body .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .card-body .card-bottom p {
+    padding: 0;
+    margin: 0;
+}
+
+.card .card-body .card-bottom div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .card-body iframe {
+    width: 100% !important;
+}
+
+.card .card-body img {
+    margin: 5px 0;
+    border-radius: 0 !important;
+}
+
+@media screen and (max-width: 1024px) {  
+    .container-web{
+        display: none;
+    }
+    
+    .container-mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    
+      background: #EFF2F7;
+    
+      max-width: 100vw !important;
+      margin-top: 60px !important;
+      padding: 0 0 70px 0;
+      margin: 0;
+    }
+    .content-card{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+  
+      width: 100%;
+    }
+  
+    .container-mobile .title-dashboard{
+      color: #3F7BD1;
+      margin: 10px 0;
+    }
+  
+    .content-card .card {
+      margin: 0 0 10px 0;
+      max-width: 95%;
+      width: 95%;
+      max-height: 100%;
+    }
+  
+    .card .card-body .card-text p{
+      display: block;
+    }
+  
+    .card .card-body {
+      padding: 0;
+    }
+    
+    .card .card-body .card-text{
+      padding: 1.25rem;
+    }
+    
+    .card .card-body iframe{
+      width: 100%;
+      min-height: 250px;
+    }
+    
+    .card .card-body img{
+      border-radius: 0;
+    }
+    
+}

@@ -1,0 +1,47 @@
+.form-container.loginPage{
+    background-color:white;
+    box-shadow: 0px 0px 10px 0px black;
+    border-radius: 10px;
+}
+.hyperColor{
+    color: white;
+}
+
+@media (max-width: 575px) { 
+    .loginBg{
+        background: #70a6f2;
+        height: 100px;
+    }
+    .form-container.loginPage{
+        padding:30px;
+    }
+}
+@media (max-width: 768px) {
+    .loginBg{
+        background: #70a6f2;
+        height: 1000px;
+    }
+    .form-container.loginPage{
+        padding:30px;
+    }
+}
+@media (min-width:769px) and (max-width: 991px){
+    .loginBg{
+        background: #70a6f2;
+        height: 991px;
+    }
+    .form-container.loginPage{
+        padding:30px 150px 30px 150px;
+    }
+}
+
+@media (min-width: 992px) {
+    .loginBg{
+        background: #70a6f2;
+        height: 1280px;
+    }
+    .form-container.loginPage{
+        padding:30px 150px 30px 150px;
+    }    
+}
+
