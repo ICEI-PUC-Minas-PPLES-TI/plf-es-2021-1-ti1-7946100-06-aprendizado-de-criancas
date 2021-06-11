@@ -30,7 +30,7 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <img src="./assets/imgDashboard/logo.png" alt="logo Hora de Brincar">
+                <img src="./assets/imgDashboard/logo200px.png" alt="logo Hora de Aprender">
             </div>
 
             <ul class="list-unstyled components">
@@ -44,27 +44,38 @@
                     <a id="btnToggle" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#tarefas" role="button"
                         aria-expanded="false">Tarefas</a>
                     <ul id="contentToggle" class="dropdown-menu">
-                        <li id="atv-port-btn"><a class="dropdown-item" href="#">Português</a></li>
+                        <li id="atv-port-btn"><a class="dropdown-item" href="#">Português - Caça Palavras</a></li>
                         <li id="atv-mat1-btn"><a class="dropdown-item" href="#">Matemática - Adição e Subtração</a></li>
                         <li id="atv-mat2-btn"><a class="dropdown-item" href="#">Matemática - Multiplicação e Divisão</a></li>
                         <li id="atv-recom-btn"><a class="dropdown-item" href="#">Tarefas Recomendadas</a></li>
                     </ul>
                 </li>
+            </br></br>
+                <li id="area-pais">
+                    <a href="#">Área dos pais</a>
+                </li>
+                <li id="area-professor">
+                    <a href="#">Área Professores</a>
+                </li>
             </ul>
         </nav>
+
         <div id="content">
             <nav class="navbar navbar-expand-lg content-navbar mb-0">
                 <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn" >
                         <span></span>
                         <span></span>
                         <span></span>
+                    </button>
+                    <button type="button" id="loginButton" class="login-btn" data-toggle="tooltip" data-placement="bottom" title="Login e Logout">
+                        <img src="assets/imgDashboard/monstro3-200px.png" width="50px" alt="perfil avatar" >
                     </button>
                 </div>
             </nav>
 
             <!-- onde está todo o conteúdo -->
-            <div class="container-fluid">
+            <div class="container-fluid conteudos">
                 <div id="conteudoDash" class="main-content"></div>
                 <div id="conteudoPort" class="main-content"></div>
                 <div id="conteudoMat1" class="main-content"></div>
@@ -73,6 +84,8 @@
                 <div id="conteudoAtvRecom" class="main-content"></div>
                 <div id="conteudoGeografia" class="main-content"></div>
             </div>
+
+            <!-- <footer>@Copyright 2021 - Aprendizado de Crianças PUC-MINAS</footer> -->
 
         </div>
 
@@ -85,6 +98,8 @@
     crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+
             $("#conteudoDash").load("./paginas/dashboard/index.html");
             $("#conteudoPort").load("./paginas/atividades/atividadePort/index.html");
             $("#conteudoPort").hide();
@@ -175,7 +190,7 @@
                   $('#contentToggle').removeClass('hide');
                   $('#contentToggle').addClass('show');
                }
-            })     
+            });
         });
     </script>
 </body>
