@@ -1,13 +1,17 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Lato&display=swap');
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    font-family: 'Lato', sans-serif;
+    background: rgb(222,62,98);
+    background: linear-gradient(180deg, rgba(222,62,98,1) 0%, rgba(0,98,169,0.8491771708683473) 58%, rgba(86,159,210,1) 100%);
     overflow: hidden;
 }
 
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -34,25 +38,19 @@ a, a:hover, a:focus {
     border: none;
 }
 
-.line {
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px dashed #ddd;
-    margin: 40px 0;
-}
-
 .wrapper {
     display: flex;
     width: 100%;
-    align-items: stretch;
-    perspective: 1500px;
+    height: 100%;
+    max-height: 100%;
 }
-
 
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #ddd;
+    background: whitesmoke;
+    border: 2px solid #de3e62;
+    border-radius: 0 10px 10px 0;
     color: #fff;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
@@ -67,7 +65,7 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #ddd;
+    background: whitesmoke;
 }
 
 #sidebar ul.components {
@@ -81,18 +79,23 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul li a {
+    color: #0062a9;
+    font-weight: 600;
     padding: 10px;
     font-size: 1.1em;
     display: block;
+    border-radius: 5px;
 }
+
 #sidebar ul li a:hover {
     color: #ddd;
-    background: #fff;
+    background: #000000;
+    text-decoration: none;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #0062a9;
 }
 
 
@@ -111,7 +114,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: transparent;
 }
 
 /* content e bottao de colapsar */
@@ -121,6 +124,7 @@ ul ul a {
     padding: 20px;
     transition: all 0.3s;
     overflow-y: auto;
+    background: transparent;
 }
 
 #content .container-fluid {
@@ -131,12 +135,18 @@ ul ul a {
 #content .container-fluid .main-content{
     width: 100%;
     height: 100%;
+    background-color: whitesmoke;
+}
+
+.login-btn{
+    border: none;
+    background-color: transparent;
 }
 
 #sidebarCollapse {
-    width: 40px;
-    height: 40px;
-    background: #ddd;
+    width: 50px;
+    height: 50px;
+    background: transparent;
 }
 
 #sidebarCollapse span {
@@ -144,7 +154,7 @@ ul ul a {
     height: 2px;
     margin: 0 auto;
     display: block;
-    background: #6d7fcc;
+    background: #fff;
     transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
     transition-delay: 0.2s;
 }
