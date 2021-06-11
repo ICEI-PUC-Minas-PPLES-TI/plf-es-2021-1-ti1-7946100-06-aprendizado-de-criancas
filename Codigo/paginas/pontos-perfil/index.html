@@ -14,7 +14,7 @@
                     <div>
                         <div id="perfilFoto">
                             <img src="https://picsum.photos/id/555/70"
-                            class="avatarUnlocked imgPerfil" alt="Perfil">
+                            class="imgPerfil" alt="Perfil" id="perfilSelec">
                         </div>
                         <p class="nome">Nome Sobrenome</p>
                     </div>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 
-                <div class="row avatarContent" id="#perfilSelec">
+                <div class="row avatarContent">
                     <h6>Avatares:</h6>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
                         <span class="selectAvatar">
@@ -45,7 +45,7 @@
                         <span>liberado</span>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2" >
-                        <span class="selectAvatar mb-2" data-toggle="tooltip" data-placement="top" title="Este avatar ainda está bloquado">
+                        <span class="selectAvatar mb-2" data-toggle="tooltip" data-placement="top" title="Este avatar ainda está bloqueado">
                             <img id="avatar3" src="https://picsum.photos/id/1003/70"
                             class="avatarLocked imgPerfil" alt="Perfil">
                         </span>
@@ -53,7 +53,7 @@
                         <span>1000 <i class="fas fa-coins" style="font-size:25px"></i></span>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
-                        <span class="selectAvatar mb-2" data-toggle="tooltip" data-placement="top" title="Este avatar ainda está bloquado">
+                        <span class="selectAvatar mb-2" data-toggle="tooltip" data-placement="top" title="Este avatar ainda está bloqueado">
                             <img id="avatar4" src="https://picsum.photos/id/1074/70"
                                 class="avatarLocked imgPerfil" alt="Perfil">
                        </span>
@@ -110,7 +110,7 @@
         crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
+            /*$('[data-toggle="tooltip"]').tooltip();
 
             $("#avatar2").click(function(){
                 var codigo = $("#avatar2").clone();
@@ -122,20 +122,18 @@
                 var codigo = $("#avatar1").clone();
                 $("#perfilFoto").empty();
                 $("#perfilFoto").append(codigo); 
-            });
+            });// ver se é necessário esse código*/
 
             //let ponto = parseInt($(".pontos").text()); 
             //$(".pontos").text(); //recuperar do local storage e colocar dentro de text() quando conseguirem pegar os pontos
             $("#perfilSelec").attr("src", (localStorage.getItem("avatar")));
-                $(".avatarUnlocked").click(function(){
-                    if(($(this).attr("src")!=$("#perfilSelec").attr("src"))==true){
-                        if ((confirm("Quer usar essa foto de perfil?"))==true){
-                            $("#perfilSelec").attr("src", ($(this).attr("src")));
-                            localStorage.setItem("avatar",($(this).attr("src")));
-                            var avatar = localStorage.getItem("avatar");
-                            console.log("A imagem salva em localStorage é:" + avatar)
-                        }
+            $(".avatarUnlocked").click(function(){
+                if(($(this).attr("src")!=$("#perfilSelec").attr("src"))==true){
+                    if ((confirm("Quer usar essa foto de perfil?"))==true){
+                        $("#perfilSelec").attr("src", ($(this).attr("src")));
+                        localStorage.setItem("avatar",($(this).attr("src")));
                     }
+                }
             });
         });
     </script>
