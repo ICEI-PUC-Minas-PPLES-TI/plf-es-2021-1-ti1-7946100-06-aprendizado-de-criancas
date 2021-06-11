@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
 
     $("#avatar4").click(function(){
@@ -19,4 +19,4 @@ $(document).ready(function() {
     }); */
     
 
- });
+ //});
