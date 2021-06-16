@@ -83,6 +83,7 @@
                 <div id="conteudoPerfil" class="main-content"></div>
                 <div id="conteudoAtvRecom" class="main-content"></div>
                 <div id="conteudoGeografia" class="main-content"></div>
+                <div id="recomendarAtividades" class="main-content"></div>
             </div>
 
             <!-- <footer>@Copyright 2021 - Aprendizado de Crianças PUC-MINAS</footer> -->
@@ -113,8 +114,10 @@
             $("#conteudoAtvRecom").hide();
             $("#conteudoAtvRecom").load("./paginas/atividadesMatematica/index.html");
             $("#conteudoAtvRecom").hide();
+            $("#recomendarAtividades").load("./paginas/gerenciarAtividades/index.html");
+            $("#recomendarAtividades").hide();
 
-            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom"];
+            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades"];
 
             $("#home-btn").click(function () {
                 $("#conteudoDash").show();
@@ -182,6 +185,17 @@
                 }
             });
 
+            $("#area-professor").click(function () {
+                $("#recomendarAtividades").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#recomendarAtividades") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+            
             $('#btnToggle').click(function (){
                if($("#contentToggle").hasClass('show')){
                 $('#contentToggle').removeClass('show');
