@@ -85,6 +85,7 @@
                 <div id="conteudoAtvRecom" class="main-content"></div>
                 <div id="recomendarAtividades" class="main-content"></div>
                 <div id="conteudoPort2" class="main-content"></div>
+                <div id="conteudoPais" class="main-content"></div>
             </div>
 
             <!-- <footer>@Copyright 2021 - Aprendizado de Crianças PUC-MINAS</footer> -->
@@ -119,8 +120,10 @@
             $("#recomendarAtividades").hide();
             $("#conteudoPort2").load("./paginas/atividades/atividadePort2/index.html");
             $("#conteudoPort2").hide();
+            $("#conteudoPais").load("./paginas/areaPais/index.html");
+            $("#conteudoPais").hide();
 
-            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2"];
+            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2","#conteudoPais"];
 
             $("#home-btn").click(function () {
                 $("#conteudoDash").show();
@@ -218,6 +221,17 @@
                   $('#contentToggle').removeClass('hide');
                   $('#contentToggle').addClass('show');
                }
+            });
+            
+            $("#area-pais").click(function () {
+                $("#conteudoPais").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoPais") {
+                        $(pages[i]).hide();
+                    }
+                }
             });
         });
     </script>
