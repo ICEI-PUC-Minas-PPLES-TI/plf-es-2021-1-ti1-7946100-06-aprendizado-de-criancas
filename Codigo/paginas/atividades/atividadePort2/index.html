@@ -5,12 +5,61 @@
   <title>Atividades Português 2</title>
 </head>
 
+<!-- um input para digitar a letra ( só aceitar um digito e nao pode ser numero)
+        um botao para enviar o numero para verificação -> se bater com letra adiciona, se nao bater nao adiciona e dá cont++
+        caso cont++ alcance 5 tentativas, dar erro e aprensentar opção para recomeçar -> deleta tudo, inclusive 0 o cont
+        um input para cada letra da palavra onde serão exibidas as letras acertadas
+        se preencher tudo, exibir botão de enviar resultado ou próximo -->
+
 <body>
-  <div class="container" style="border:1px solid red">
-    <content class="col-12 col-sm-12 col-md-12 col-lg-10" style="border:1px solid blue">
-      <p>oi</p>
+  <div class="container">
+    <content class="col-12 col-sm-12 col-md-12 col-lg-12">
+      <h4 class="mb-4">Adivinhe a palavra</h4>
+      <div style="display:flex; width:100%; margin-top:100px">
+        <!--exibicao-->
+        <div style="width:70%">
+          <form style="display:flex;justify-content: space-around; align-items: center;">
+            <input type="text" disabled id="letra1" value="" style="width:80px;height:80px;border:none;background-color:transparent;border-bottom:2px solid #de3e62;margin-right:5px">
+            <input type="text" disabled id="letra2" value="" style="width:80px;height:80px;border:none;background-color:transparent;border-bottom:2px solid #de3e62;margin-right:5px">
+            <input type="text" disabled id="letra3" value="" style="width:80px;height:80px;border:none;background-color:transparent;border-bottom:2px solid #de3e62;margin-right:5px">
+            <input type="text" disabled id="letra4" value="" style="width:80px;height:80px;border:none;background-color:transparent;border-bottom:2px solid #de3e62;margin-right:5px">
+            <button type="button" class="btn btn-dark" style="width:180px;height:40px;margin-left:20px">Enviar Resultado</button>
+          </form>
+        </div>    
+        <div style="width: 40%; padding-left:20px;">
+          <div>
+            Dicas:
+            Digite apenas letras e não números
+            São palavras de apenas 4 letras
+            Vale a pena começar pelas vogais
+            Boa sorte!
+          </div>
+          <div style="margin: 8px 0;">
+            <img src="assets/imgDashboard/question.gif" width="200px">
+          </div>
+          <!-- <img src="assets/imgDashboard/emoji.gif" width="140px" style="display:none"> -->
+          <div>Pontos Acumulados:<span>0</span></div>
+        </div>
+      </div>
+      <div style="width:100%;display:flex;justify-content:flex-start; align-items: center;">
+        <form style="display:flex;margin-right: 10%;align-items: center;">
+          <input type="text" class="form-control" id="letra" value="" maxlength="1" style="padding:20px;font-size:60px;width:80px;height:80px;background-color:transparent;border:2px dashed #de3e62;margin-right:20px">
+          <button type="button" class="btn btn-dark" style="width:180px;height:40px;margin-left:5px">Testar Letra</button>
+        </form>
+        <div>Número de Tentaivas:<span>0</span></div>    
+      </div>
     </content>
   </div>
+
+
+
+  <script>
+    $(document).ready(function () {
+      var palavras = ["gato", "feio", "dedo", "amor"];
+      $("#letra").mask("aaaaaaaaaaaaa");
+
+    })
+  </script>
 
 </body>
 
