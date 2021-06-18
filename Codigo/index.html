@@ -52,12 +52,9 @@
                     </ul>
                 </li>
             </br></br>
-                <li id="area-pais">
-                    <a href="#">Área dos pais</a>
-                </li>
-                <li id="area-professor">
-                    <a href="#">Área Professores</a>
-                </li>
+                <li id="area-pais"><a href="#">Área dos pais</a></li>
+                <li id="area-professor"><a href="#">Área Professores</a></li>
+                <li id="contato-btn"><a href="#">Contato</a></li>
             </ul>
         </nav>
 
@@ -86,6 +83,7 @@
                 <div id="recomendarAtividades" class="main-content"></div>
                 <div id="conteudoPort2" class="main-content"></div>
                 <div id="conteudoPais" class="main-content"></div>
+                <div id="contato" class="main-content"></div>
             </div>
 
             <!-- <footer>@Copyright 2021 - Aprendizado de Crianças PUC-MINAS</footer> -->
@@ -122,8 +120,10 @@
             $("#conteudoPort2").hide();
             $("#conteudoPais").load("./paginas/areaPais/index.html");
             $("#conteudoPais").hide();
+            $("#contato").load("./paginas/formularioContato/index.html");
+            $("#contato").hide();
 
-            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2","#conteudoPais"];
+            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2","#conteudoPais", "#contato"];
 
             $("#home-btn").click(function () {
                 $("#conteudoDash").show();
@@ -229,6 +229,17 @@
                 $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
                     if (pages[i] != "#conteudoPais") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+
+            $("#contato-btn").click(function () {
+                $("#contato").show();
+                $('#contato').removeClass('show');
+                $('#contato').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#contato") {
                         $(pages[i]).hide();
                     }
                 }
