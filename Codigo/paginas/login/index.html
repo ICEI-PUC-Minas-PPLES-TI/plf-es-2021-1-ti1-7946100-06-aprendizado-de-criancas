@@ -23,6 +23,7 @@
                       <br>
                       <p class="forgPassword"><a href="#">Esqueci minha senha!<br></a></p>
                       <p class="signUp"><a href="cadastro.html">Registre-se!</a></p>
+                      <p class="signUp"><a href="../../index.html">Voltar para Home</a></p>
                     </div>
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" id="manterConectado">
@@ -58,8 +59,8 @@ crossorigin="anonymous"></script>
     return objDados;
 }
 function fazLogin(){
-  let strUser = document.getElementById('loginUser')
-  let strSenha = document.getElementById('loginSenha')
+  let strUser = document.getElementById('loginUser').value
+  let strSenha = document.getElementById('loginSenha').value
   let objDados = leDados()
   if((document.getElementById('loginUser').value == "")||(document.getElementById('loginSenha').value == "")){
         alert('Não deixe nenhum campo vazio.')
