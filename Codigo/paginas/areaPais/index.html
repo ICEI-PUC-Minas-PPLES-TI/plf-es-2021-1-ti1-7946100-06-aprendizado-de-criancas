@@ -7,24 +7,25 @@
   <div id="conteudoPais" style = "width:100%; height: 100%;">
             <div class="userArea">
             <img src="https://picsum.photos/id/555/70" alt="PerfilAvatar" id="avatarPerfil">
-            <span id="topNomeUsuario">Username</span>
           </div>
           <div class="row">
             <div class="col-sm-6">
-          <div class= "upperText">Aqui você verá o resumo das notas do seu filho! Por favor, confira os dados das avaliações realizadas pelo aluno.</div>
+          <div class= "upperText">  Aqui você verá o resumo das notas do seu filho! Por favor, confira os dados das avaliações realizadas pelo aluno.</div>
             <h3> Média de notas </h3>
             
               <table class="justify-content-center">
                 <thead>
                 <tr>
                   <td class="text-center">Português<br>[caça-palavras]</td>
+                  <td class="text-center">Português<br>[Forca]</td>
                   <td class="text-center">Matemática<br>[+|-]</td>
                   <td class="text-center">Matemática<br>[x|&#247]</td>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="text-center values" id="notaPortugues">1</td>
+                  <td class="text-center values" id="notaPortugues1">1</td>
+                  <td class="text-center values" id="notaPortugues2">1</td>
                   <td class="text-center values" id="notaMatematica1">2</td>
                   <td class="text-center values" id="notaMatematica2">2</td>
                 </tr>
@@ -34,8 +35,8 @@
               </table>
             
             <div class="resumoAprimoramento">
-                <p1><span id="nomeUsuario"></span>, Este é o resumo de seu desempenho!<br></p1>
-                <p1 id="atencao">Fique atento em suas notas  <b><span id="materiaAtencao"></span></b> pois foi a sua menor média!</p1>
+                <p1>Este é o resumo de seu desempenho!<br></p1>
+                <p1 id="atencao">Fique atento em suas notas de <b><span id="materiaAtencao"></span></b> pois foi a sua menor média!</p1>
             </div>
           </div>
           <div class="col-sm-6 areaGrafica">
@@ -54,10 +55,10 @@
 
   <script>
    const mediaGeral = 0.60*(300);                                  // Pegar nota Mat 2
-  const somaTotal = JSON.parse(localStorage.getItem("Pontuacao")) + JSON.parse(localStorage.getItem("notaMat2")) + JSON.parse(localStorage.getItem("nota"));
-  const mediaUser = JSON.parse(localStorage.getItem("Pontuacao")) + JSON.parse(localStorage.getItem("notaMat2")) + JSON.parse(localStorage.getItem("nota"))/3;
-  const mediaPortugues = JSON.parse(localStorage.getItem("Pontuacao"));
-  const mediaMatematica =JSON.parse(localStorage.getItem("nota")) + JSON.parse(localStorage.getItem("notaMat2"))/2;
+  const somaTotal = JSON.parse(localStorage.getItem("NotaPor1")) + JSON.parse(localStorage.getItem("NotaPor2")) + JSON.parse(localStorage.getItem("NotaMat2")) + JSON.parse(localStorage.getItem("NotaMat1"));
+  const mediaUser = JSON.parse(localStorage.getItem("NotaPor1")) + JSON.parse(localStorage.getItem("NotaMat2")) + JSON.parse(localStorage.getItem("NotaMat1"))/3;
+  const mediaPortugues = JSON.parse(localStorage.getItem("NotaPor1")) + JSON.parse(localStorage.getItem("NotaPor2"))/2;
+  const mediaMatematica =JSON.parse(localStorage.getItem("NotaMat1")) + JSON.parse(localStorage.getItem("NotaMat2"))/2;
 
   google.charts.load('current', {packages: ['corechart']});
   google.charts.setOnLoadCallback(drawChart);
@@ -92,11 +93,10 @@
       }
       
   
-      document.getElementById("notaPortugues").innerHTML = JSON.parse(localStorage.getItem("Pontuacao"));
-      document.getElementById("notaMatematica1").innerHTML = JSON.parse(localStorage.getItem("nota"));
-      document.getElementById("notaMatematica2").innerHTML = JSON.parse(localStorage.getItem("notaMat2"));
-      document.getElementById("nomeUsuario").innerHTML = JSON.parse(localStorage.getItem("#"));
-      document.getElementById("topNomeUsuario").innerHTML = JSON.parse(localStorage.getItem("#"));
+      document.getElementById("notaPortugues1").innerHTML = JSON.parse(localStorage.getItem("NotaPor1"));
+      document.getElementById("notaPortugues2").innerHTML = JSON.parse(localStorage.getItem("NotaPor1"));
+      document.getElementById("notaMatematica1").innerHTML = JSON.parse(localStorage.getItem("NotaMat1"));
+      document.getElementById("notaMatematica2").innerHTML = JSON.parse(localStorage.getItem("NotaMat2"));
   }
   document.getElementById("btn-areaPais").onclick = carregaAreaPais();
       // Colocar um continue Aprendendo!
