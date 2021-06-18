@@ -1,0 +1,43 @@
+#conteudoPais{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.userArea{
+    display:flex-box;
+    padding-bottom: 40px;
+}
+
+.upperText{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+    padding-bottom: 20px;
+}
+.userArea span{
+    font-size:2.0em;
+}
+#avatarPerfil{
+    border-radius: .5em;
+}
+table thead{
+    background: linear-gradient(180deg, rgba(222,62,98,1) 0%, rgba(0,98,169,0.8491771708683473) 58%, rgba(86,159,210,1) 100%);
+    font-size:.8em;
+}
+td{
+    background: rgba(9, 53, 172, 0.598);
+    font-size:1em;
+    color:white;
+}
+table{
+    width: 100%;
+}
+table, th, td{
+    content: center;
+    padding:20px 25px;
+    border: 1px solid black;
+}
+
+.resumoAprimoramento{
+    padding-top: 60px;
+    font-size: 1.2em;
+}
+
