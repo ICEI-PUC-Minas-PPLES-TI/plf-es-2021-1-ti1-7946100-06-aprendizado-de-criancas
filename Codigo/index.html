@@ -44,6 +44,7 @@
                     <a id="btnToggle" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#tarefas" role="button"
                         aria-expanded="false">Tarefas</a>
                     <ul id="contentToggle" class="dropdown-menu">
+                        <li id="atv-port2-btn"><a class="dropdown-item" href="#">Português - Adivinhe a Palavra</a></li>
                         <li id="atv-port-btn"><a class="dropdown-item" href="#">Português - Caça Palavras</a></li>
                         <li id="atv-mat1-btn"><a class="dropdown-item" href="#">Matemática - Adição e Subtração</a></li>
                         <li id="atv-mat2-btn"><a class="dropdown-item" href="#">Matemática - Multiplicação e Divisão</a></li>
@@ -82,8 +83,9 @@
                 <div id="conteudoMat2" class="main-content"></div>
                 <div id="conteudoPerfil" class="main-content"></div>
                 <div id="conteudoAtvRecom" class="main-content"></div>
-                <div id="conteudoGeografia" class="main-content"></div>
                 <div id="recomendarAtividades" class="main-content"></div>
+                <div id="conteudoPort2" class="main-content"></div>
+                <div id="conteudoPais" class="main-content"></div>
             </div>
 
             <!-- <footer>@Copyright 2021 - Aprendizado de Crianças PUC-MINAS</footer> -->
@@ -116,8 +118,12 @@
             $("#conteudoAtvRecom").hide();
             $("#recomendarAtividades").load("./paginas/gerenciarAtividades/index.html");
             $("#recomendarAtividades").hide();
+            $("#conteudoPort2").load("./paginas/atividades/atividadePort2/index.html");
+            $("#conteudoPort2").hide();
+            $("#conteudoPais").load("./paginas/areaPais/index.html");
+            $("#conteudoPais").hide();
 
-            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades"];
+            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2","#conteudoPais"];
 
             $("#home-btn").click(function () {
                 $("#conteudoDash").show();
@@ -195,6 +201,17 @@
                     }
                 }
             });
+
+            $("#atv-port2-btn").click(function () {
+                $("#conteudoPort2").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoPort2") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
             
             $('#btnToggle').click(function (){
                if($("#contentToggle").hasClass('show')){
@@ -204,6 +221,17 @@
                   $('#contentToggle').removeClass('hide');
                   $('#contentToggle').addClass('show');
                }
+            });
+            
+            $("#area-pais").click(function () {
+                $("#conteudoPais").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoPais") {
+                        $(pages[i]).hide();
+                    }
+                }
             });
         });
     </script>
