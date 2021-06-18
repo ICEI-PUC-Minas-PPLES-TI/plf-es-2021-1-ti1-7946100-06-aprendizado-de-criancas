@@ -158,15 +158,19 @@ fieldset .grupo .campo{
                var item = {
                    "nome": nome,
                    "email": email,
-                   //tel
-                   //text
+                   "tel": telefone,
+                   "text": text,
+                   
                }
 
                contato.push(item);
 
-               //mandar pro localStorage -> contato
-               //localStorage.setItem('chave', valor);
+               localStorage.setItem('nome', nome);
+               localStorage.setItem('email', email);
+               localStorage.setItem('tel', telefone);
+               localStorage.setItem('text', text);
 
+              
             });
 
         });
