@@ -26,11 +26,9 @@
                     <div class="form-group">
                       <input type="password" class="form-control" id="confirmarSenha" placeholder="Confirme a senha">
                       <br>
-                      <p class="signUp"><a href="index.html">Já tem uma conta?</a></p>
-                    </div>
                     <div id='btnCadastrar'><button type="submit" class="btn btn-primary btn-block" >Cadastrar</button></div>
-                    <!--<h5 class="pt-2 text-center">Ou entre com:</h5>
-                    <div class="row signInWith"><small>APIs</small></div>-->
+                    <p class="signUp"><a href="index.html">Já tem uma conta? Volte para Login!</a></p>
+                    <p class="homeLink"><a href="../../index.html">Voltar para Home!</a></p>
                   </form>
             </div>
         </div>
@@ -61,7 +59,7 @@ crossorigin="anonymous"></script>
 }
 
 function salvaDados (dados) {
-    localStorage.setItem ('login', JSON.stringify (dados));
+    localStorage.setItem ('login', JSON.stringify(dados));
 }
 
 function incluiLogin(){
@@ -95,7 +93,6 @@ function incluiLogin(){
                     objDados.login.push(novoLogin)
                     salvaDados(objDados)
                     alert('Cadastro concluído com sucesso.')
-                    window.location.href="http://127.0.0.1:5500/Codigo/paginas/login/index.html";
                 }    
             }
         }   
