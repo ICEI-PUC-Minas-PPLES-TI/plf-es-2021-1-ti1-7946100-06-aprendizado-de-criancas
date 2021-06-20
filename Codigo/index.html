@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="./paginas/atividades/atividadeMat2/css/styles.css" >
     <link rel="stylesheet" type="text/css" href="./paginas/atividades/atividadeMat1/css/styles.css" >
     <link rel="stylesheet" type="text/css" href="./paginas/pontos/style.css">
+    <link rel="stylesheet" type="text/css" href="./paginas/areaPais/style.css">
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
         integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
@@ -44,6 +45,7 @@
                     <a id="btnToggle" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#tarefas" role="button"
                         aria-expanded="false">Tarefas</a>
                     <ul id="contentToggle" class="dropdown-menu">
+                        <li id="atv-port2-btn"><a class="dropdown-item" href="#">Português - Adivinhe a Palavra</a></li>
                         <li id="atv-port-btn"><a class="dropdown-item" href="#">Português - Caça Palavras</a></li>
                         <li id="atv-mat1-btn"><a class="dropdown-item" href="#">Matemática - Adição e Subtração</a></li>
                         <li id="atv-mat2-btn"><a class="dropdown-item" href="#">Matemática - Multiplicação e Divisão</a></li>
@@ -51,16 +53,13 @@
                     </ul>
                 </li>
             </br></br>
-                <li id="area-pais">
-                    <a href="#">Área dos pais</a>
-                </li>
-                <li id="area-professor">
-                    <a href="#">Área Professores</a>
-                </li>
+                <li id="area-pais"><a href="#">Área dos pais</a></li>
+                <li id="area-professor"><a href="#">Área Professores</a></li>
+                <li id="contato-btn"><a href="#">Contato</a></li>
             </ul>
         </nav>
 
-        <div id="content">
+        <div id="content" style="padding: 10px">
             <nav class="navbar navbar-expand-lg content-navbar mb-0">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="navbar-btn" >
@@ -68,8 +67,8 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <button type="button" id="loginButton" class="login-btn" data-toggle="tooltip" data-placement="bottom" title="Login e Logout">
-                        <img src="assets/imgDashboard/monstro3-200px.png" width="50px" alt="perfil avatar" >
+                    <a href='paginas/login/index.html'><button type="button" id="loginButton" class="login-btn" data-toggle="tooltip" data-placement="bottom" title="Login e Logout">
+                        <img src="assets/imgDashboard/monstro3-200px.png" width="50px" alt="perfil avatar" ></a>
                     </button>
                 </div>
             </nav>
@@ -82,7 +81,10 @@
                 <div id="conteudoMat2" class="main-content"></div>
                 <div id="conteudoPerfil" class="main-content"></div>
                 <div id="conteudoAtvRecom" class="main-content"></div>
-                <div id="conteudoGeografia" class="main-content"></div>
+                <div id="recomendarAtividades" class="main-content"></div>
+                <div id="conteudoPort2" class="main-content"></div>
+                <div id="conteudoPais" class="main-content"></div>
+                <div id="contato" class="main-content"></div>
             </div>
 
             <!-- <footer>@Copyright 2021 - Aprendizado de Crianças PUC-MINAS</footer> -->
@@ -113,8 +115,16 @@
             $("#conteudoAtvRecom").hide();
             $("#conteudoAtvRecom").load("./paginas/atividadesMatematica/index.html");
             $("#conteudoAtvRecom").hide();
+            $("#recomendarAtividades").load("./paginas/gerenciarAtividades/index.html");
+            $("#recomendarAtividades").hide();
+            $("#conteudoPort2").load("./paginas/atividades/atividadePort2/index.html");
+            $("#conteudoPort2").hide();
+            $("#conteudoPais").load("./paginas/areaPais/index.html");
+            $("#conteudoPais").hide();
+            $("#contato").load("./paginas/formularioContato/index.html");
+            $("#contato").hide();
 
-            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom"];
+            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2","#conteudoPais", "#contato"];
 
             $("#home-btn").click(function () {
                 $("#conteudoDash").show();
@@ -182,6 +192,28 @@
                 }
             });
 
+            $("#area-professor").click(function () {
+                $("#recomendarAtividades").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#recomendarAtividades") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+
+            $("#atv-port2-btn").click(function () {
+                $("#conteudoPort2").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoPort2") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+            
             $('#btnToggle').click(function (){
                if($("#contentToggle").hasClass('show')){
                 $('#contentToggle').removeClass('show');
@@ -191,8 +223,31 @@
                   $('#contentToggle').addClass('show');
                }
             });
+            
+            $("#area-pais").click(function () {
+                $("#conteudoPais").show();
+                $('#contentToggle').removeClass('show');
+                $('#contentToggle').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#conteudoPais") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+
+            $("#contato-btn").click(function () {
+                $("#contato").show();
+                $('#contato').removeClass('show');
+                $('#contato').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#contato") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
         });
     </script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    
+    <title>Login template screen</title>
+</head>
+<body>
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-8 col-md-6 col-lg-6">
+                <form class="form-container loginPage">
+                    <div class="row justify-content-center"><img src="../../assets/imgDashboard/logo200px.png" width="100px" id="logo" alt="Logo"></div>
+                    <div class="form-group">
+                      <h3 class="text-center pb-4">Cadastro</h3>
+                      <input type="user" class="form-control" id="cadastroUser" aria-describedby="userHelp" placeholder="Usuário">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" id="cadastroSenha" placeholder="Senha (min 6 caracteres)">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" id="confirmarSenha" placeholder="Confirme a senha">
+                      <br>
+                    <div id='btnCadastrar'><button type="submit" class="btn btn-primary btn-block" >Cadastrar</button></div>
+                    <p class="signUp"><a href="index.html">Já tem uma conta? Volte para Login!</a></p>
+                    <p class="homeLink"><a href="../../index.html">Voltar para Home!</a></p>
+                  </form>
+            </div>
+        </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"></script>   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+crossorigin="anonymous"></script>
+<script>
+  function leDados(){
+    let strDados = localStorage.getItem('login');
+    let objDados = {};
+
+    if(strDados){
+        objDados = JSON.parse(strDados);
+    }
+    else{
+        objDados = {
+            login: [
+            
+            ]
+        }
+    }
+    return objDados;
+}
+
+function salvaDados (dados) {
+    localStorage.setItem ('login', JSON.stringify(dados));
+}
+
+function incluiLogin(){
+    let strUsuario = document.getElementById('cadastroUser').value
+    let strSenha = document.getElementById('cadastroSenha').value
+    let objDados = leDados()
+    if((document.getElementById('cadastroUser').value == "")||(document.getElementById('cadastroSenha').value == "")||(document.getElementById('confirmarSenha').value == "")){
+        alert('Não deixe nenhum campo vazio.')
+    }
+    else{
+        if(document.getElementById('cadastroSenha').value.length < 6){
+            alert('A senha precisa ter, no mínimo, 6 caracteres')
+        }
+        else{
+            if(document.getElementById('cadastroSenha').value != document.getElementById('confirmarSenha').value){
+                alert('Confirme corretamente a senha.')
+            }
+            else{
+                let jaCadastrado = 0
+                let novoLogin = {
+                    usuario: strUsuario,
+                    senha: strSenha
+                };
+                for(i=0; i<objDados.login.length; i++){
+                  if(novoLogin.usuario == objDados.login[i].usuario){
+                    jaCadastrado = 1
+                    alert('Esse usuário já está cadastrado.')
+                  }
+                }
+                if (jaCadastrado == 0){
+                    objDados.login.push(novoLogin)
+                    salvaDados(objDados)
+                    alert('Cadastro concluído com sucesso.')
+                }    
+            }
+        }   
+    }
+}
+
+document.getElementById('btnCadastrar').addEventListener('click', incluiLogin)
+</script>
+
+</body>
+
+</html>

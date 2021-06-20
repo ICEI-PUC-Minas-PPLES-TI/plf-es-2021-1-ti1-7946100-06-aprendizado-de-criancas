@@ -53,17 +53,17 @@
     <script src="./script.js"></script>
     <script>
         function cadastrarNota() {
-            if (localStorage.getItem('nota') !== null) {
-                localStorage.removeItem('nota');
+            if (localStorage.getItem('notaMat1') !== null) {
+                localStorage.removeItem('notaMat1');
             }
 
-            let nota = Number(document.getElementById('nota1').value) + Number(document.getElementById('nota2').value);
+            let nota = Number(document.getElementById('notaMat1').value) + Number(document.getElementById('notaMat1').value);
 
-            localStorage.setItem('nota', nota);
+            localStorage.setItem('notaMat1', nota);
         }
 
         function imprimeNota() {
-            let text = localStorage.getItem('nota');
+            let text = localStorage.getItem('notaMat1');
             document.getElementById('divTextMat1').innerHTML = `Sua nota total foi ${text}!`;
             $('#modalMat1').insertAfter($('body'));
         }
