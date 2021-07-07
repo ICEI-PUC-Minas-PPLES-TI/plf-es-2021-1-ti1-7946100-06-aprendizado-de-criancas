@@ -11,17 +11,11 @@
     <!-- CSS das paginas -->
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <link rel="stylesheet" type="text/css" href="./paginas/dashboard/style.css">
-    <link rel="stylesheet" type="text/css" href="./paginas/atividades/atividadePort/css/styles.css" >
-    <link rel="stylesheet" type="text/css" href="./paginas/atividades/atividadeMat2/css/styles.css" >
-    <link rel="stylesheet" type="text/css" href="./paginas/atividades/atividadeMat1/css/styles.css" >
     <link rel="stylesheet" type="text/css" href="./paginas/pontos/style.css">
     <link rel="stylesheet" type="text/css" href="./paginas/areaPais/style.css">
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
         integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
-        crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
         crossorigin="anonymous"></script>
     <title>Hora de Aprender</title>
 </head>
@@ -68,7 +62,7 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <a href='paginas/login/index.html'><button type="button" id="loginButton" class="login-btn" data-toggle="tooltip" data-placement="bottom" title="Login e Logout">
+                    <a href='paginas/login/login.html'><button type="button" id="loginButton" class="login-btn" data-toggle="tooltip" data-placement="bottom" title="Login e Logout">
                         <img src="assets/imgDashboard/monstro3-200px.png" width="50px" alt="perfil avatar"></a>
                     </button>
                 </div>
@@ -80,7 +74,7 @@
                 <div id="conteudoPort" class="main-content"></div>
                 <div id="conteudoMat1" class="main-content"></div>
                 <div id="conteudoMat2" class="main-content"></div>
-                <div id="conteudoPerfil" class="main-content"></div>
+                <div id="conteudoPerfil" class="main-content" style="height: auto;"></div>
                 <div id="conteudoAtvRecom" class="main-content"></div>
                 <div id="recomendarAtividades" class="main-content"></div>
                 <div id="conteudoPort2" class="main-content"></div>
@@ -104,31 +98,31 @@
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();
 
-            $("#conteudoDash").load("./paginas/dashboard/index.html");
-            $("#conteudoPort").load("./paginas/atividades/atividadePort/index.html");
+            $("#conteudoDash").load("./paginas/dashboard/dashboard.html");
+            $("#conteudoPort").load("./paginas/atividades/atividadePort/Portugues1.html");
             $("#conteudoPort").hide();
-            $("#conteudoMat1").load("./paginas/atividades/atividadeMat1/index.html");
+            $("#conteudoMat1").load("./paginas/atividades/atividadeMat1/matematica1.html");
             $("#conteudoMat1").hide();
-            $("#conteudoMat2").load("./paginas/atividades/atividadeMat2/index.html");
+            $("#conteudoMat2").load("./paginas/atividades/atividadeMat2/matematica2.html");
             $("#conteudoMat2").hide();
-            $("#conteudoPerfil").load("./paginas/pontos-perfil/index.html");
+            $("#conteudoPerfil").load("./paginas/pontos-perfil/perfil.html");
             $("#conteudoPerfil").hide();
-            $("#conteudoAtvRecom").load("./paginas/atividadesMatematica/index.html");
-            $("#conteudoAtvRecom").hide();
-            $("#conteudoAtvRecom").load("./paginas/atividadesMatematica/index.html");
+            $("#conteudoAtvRecom").load("./paginas/atividadesRecomendadas/atividadesRecomendadas.html");
             $("#conteudoAtvRecom").hide();
             $("#recomendarAtividades").load("./paginas/gerenciarAtividades/index.html");
             $("#recomendarAtividades").hide();
-            $("#conteudoPort2").load("./paginas/atividades/atividadePort2/index.html");
+            $("#conteudoPort2").load("./paginas/atividades/atividadePort2/Portugues2.html");
             $("#conteudoPort2").hide();
-            $("#conteudoPais").load("./paginas/areaPais/index.html");
+            $("#conteudoPais").load("./paginas/areaPais/areaPais.html");
             $("#conteudoPais").hide();
-            $("#contato").load("./paginas/formularioContato/index.html");
+            $("#contato").load("./paginas/formularioContato/contato.html");
             $("#contato").hide();
             $("#sobre").load("./paginas/sobre/sobre.html");
             $("#sobre").hide();
 
             const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2","#conteudoPais", "#contato", "#sobre"];
+
+        
 
             $("#home-btn").click(function () {
                 $("#conteudoDash").show();
