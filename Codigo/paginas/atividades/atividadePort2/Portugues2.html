@@ -6,12 +6,14 @@
 </head>
 
 <body>
-  <div class="container" style="width:100%;height:100%;color:black;background-color:transparent;padding:10px;display: flex; flex-direction: column; align-items: center;">
+  <div class="container"
+    style="width:100%;height:100%;color:black;background-color:transparent;padding:10px;display: flex; flex-direction: column; align-items: center;">
     <h4 class="mb-4 mt-4" style="font-size: 28px">Adivinhe a palavra</h4>
     <content style="width:100%;height:100%">
       <div class="row" style="width:100%; display:flex; flex-wrap: wrap; margin-top:100px">
         <!--exibicao-->
-        <div class="" style="margin: 8px 0; width:70%; min-width:350px; display:flex; flex-direction: row; flex-wrap: wrap;">
+        <div class=""
+          style="margin: 8px 0; width:70%; min-width:350px; display:flex; flex-direction: row; flex-wrap: wrap;">
           <form style="display:flex;justify-content:space-around; align-items:center;">
             <input type="text" disabled id="0" value=""
               style="padding: 20px;font-size:60px;width:80px;height:80px;border:none;background-color:transparent;border-bottom:2px solid #de3e62;margin-right:5px">
@@ -39,6 +41,26 @@
           </div>
           <div>Pontos Acumulados:
             <span style="font-weight: 900;" id="port2Pontos">0</span>
+          </div>
+          <div class="mt-2">
+            <p>Gostou? Curta esta atividade!</p>
+            <button type="button" style="border:none;background-color: transparent;" id="likePort2">
+              <svg viewBox="0 0 24 24" fill="#ffffff" width="40px">
+                <defs>
+                  <style>
+                    .a {
+                      stroke: #000;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                    }
+                  </style>
+                </defs>
+                <path class="a"
+                  d="M20,15.659h0a1.5,1.5,0,1,1,0,3H19a1.5,1.5,0,0,1,1.5,1.5c0,.829-.672,1-1.5,1H12.5c-2.851,0-3.5-.5-7-1v-8.5c2.45,0,6.5-4.5,6.5-8.5,0-1.581,2.189-2.17,3,.719.5,1.781-1,5.281-1,5.281h8a1.5,1.5,0,0,1,1.5,1.5c0,.829-.672,2-1.5,2H21a1.5,1.5,0,0,1,0,3H20" />
+                <rect class="a" x="0.5" y="10.159" width="5" height="12" />
+                <path d="M3.25,19.159a.75.75,0,1,0,.75.75.75.75,0,0,0-.75-.75Z" />
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -193,10 +215,3 @@
 </body>
 
 </html>
-
-<!-- sm
-md
-lg
-xl
-xxl
- -->
