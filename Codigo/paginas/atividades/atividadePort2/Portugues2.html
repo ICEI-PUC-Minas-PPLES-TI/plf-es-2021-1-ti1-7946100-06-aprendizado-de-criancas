@@ -42,10 +42,10 @@
           <div>Pontos Acumulados:
             <span style="font-weight: 900;" id="port2Pontos">0</span>
           </div>
-          <div class="mt-2">
-            <p>Gostou? Curta esta atividade!</p>
+          <div class="mt-2" style="display: flex; align-items: center; height: 60px;">
+            <p class="m-0 p-0">Gostou? Curta esta atividade!</p>
             <button type="button" style="border:none;background-color: transparent;" id="likePort2">
-              <svg viewBox="0 0 24 24" fill="#ffffff" width="40px">
+              <svg viewBox="0 0 24 24" fill="#ffffff" width="30px" id="likeSQGPort2">
                 <defs>
                   <style>
                     .a {
@@ -205,10 +205,23 @@
       setarGifeMsg("assets/imgDashboard/question.gif", "Boa sorte!");
     }
 
+    function avaliarPort2() {
+      var icone = document.getElementById('likeSQGPort2');
+      var filled = icone.getAttribute('fill');
+      if(filled == "#ffffff"){
+        icone.setAttribute("fill", "#de3e62");
+        localStorage.setItem('atividadesAvaliadas', 'Português Adivinhação');
+      } 
+      else {
+        icone.setAttribute("fill", "#ffffff");
+        localStorage.removeItem('atividadesAvaliadas');
+      }
+    }
+
     document.getElementById('testarLetra').addEventListener('click', verificarLetra);
     document.getElementById('enviarResultado').addEventListener('click', envResultado);
     document.getElementById('recomecar').addEventListener('click', jogarNovamente);
-
+    document.getElementById('likePort2').addEventListener('click', avaliarPort2);
 
   </script>
 

@@ -6,21 +6,50 @@
 </head>
 
 <body>
-    <div id="Mat1Content" class="container" style="width:100%;height:auto;color:black;background-color:transparent;padding:10px;display: flex; flex-direction: column; align-items: center;">
+    <div id="Mat1Content" class="container"
+        style="width:100%;height:auto;color:black;background-color:transparent;padding:10px;display: flex; flex-direction: column; align-items: center;">
         <h4 id="title" class="mb-4 mt-4" style="font-size: 28px">Adição & Subtração</h4>
-        <iframe src="https://www.educaplay.com/game/8148956-adicao.html" width="80%" height="720px" class="mb-2 p-0"></iframe>
-        <iframe src="https://www.educaplay.com/game/8147837-subtracao.html" width="80%" height="720px" class="mb-2 p-0"></iframe>
+        <iframe src="https://www.educaplay.com/game/8148956-adicao.html" width="80%" height="720px"
+            class="mb-2 p-0"></iframe>
+        <iframe src="https://www.educaplay.com/game/8147837-subtracao.html" width="80%" height="720px"
+            class="mb-2 p-0"></iframe>
 
         <form class="form mt-4 mb-2" style="width:100%; display: flex; flex-direction: column; align-items: center">
             <div class="form-group" style="width: 70%">
-                <input type="text" id="nota1" class="form-control form-control-sm mb-2" autocomplete="off" placeholder="Digite a nota da Atividade de Adição" style="background-color:transparent;border:2px dashed #de3e62;height: 40px; font-size: 15px; color: #0062a9; font-weight: bold;"/>
-                <input type="text" id="nota2" class="form-control form-control-sm mb-2" autocomplete="off" placeholder="Digite a nota da Atividade de Subtração" style="background-color:transparent;border:2px dashed #de3e62;height: 40px; font-size: 15px; color: #0062a9; font-weight: bold;"/>
+                <input type="text" id="nota1" class="form-control form-control-sm mb-2" autocomplete="off"
+                    placeholder="Digite a nota da Atividade de Adição"
+                    style="background-color:transparent;border:2px dashed #de3e62;height: 40px; font-size: 15px; color: #0062a9; font-weight: bold;" />
+                <input type="text" id="nota2" class="form-control form-control-sm mb-2" autocomplete="off"
+                    placeholder="Digite a nota da Atividade de Subtração"
+                    style="background-color:transparent;border:2px dashed #de3e62;height: 40px; font-size: 15px; color: #0062a9; font-weight: bold;" />
             </div>
-            <button class="btn btn-dark" style="width:180px;height:40px;font-size:16px" id="btnEnviar">Enviar notas</button>
+            <button class="btn btn-dark" style="width:180px;height:40px;font-size:16px" id="btnEnviar">Enviar
+                notas</button>
         </form>
 
-        <button class="btn" style="width:180px;height:40px;border-color:#de3e62;font-size:16px" id="btnVisualizar" data-bs-toggle="modal"
-            data-bs-target="#modalMat1">Visualizar nota</button>
+        <button class="btn" style="width:180px;height:40px;border-color:#de3e62;font-size:16px" id="btnVisualizar"
+            data-bs-toggle="modal" data-bs-target="#modalMat1">Visualizar nota</button>
+
+        <div class="mt-2" style="display: flex; align-items: center; height: 60px;">
+            <p class="m-0 p-0">Gostou? Curta esta atividade!</p>
+            <button type="button" style="border:none;background-color: transparent;" id="likeMat1">
+                <svg viewBox="0 0 24 24" fill="#ffffff" width="30px" id="likeSQGMat1">
+                    <defs>
+                        <style>
+                            .a {
+                                stroke: #000;
+                                stroke-linecap: round;
+                                stroke-linejoin: round;
+                            }
+                        </style>
+                    </defs>
+                    <path class="a"
+                        d="M20,15.659h0a1.5,1.5,0,1,1,0,3H19a1.5,1.5,0,0,1,1.5,1.5c0,.829-.672,1-1.5,1H12.5c-2.851,0-3.5-.5-7-1v-8.5c2.45,0,6.5-4.5,6.5-8.5,0-1.581,2.189-2.17,3,.719.5,1.781-1,5.281-1,5.281h8a1.5,1.5,0,0,1,1.5,1.5c0,.829-.672,2-1.5,2H21a1.5,1.5,0,0,1,0,3H20" />
+                    <rect class="a" x="0.5" y="10.159" width="5" height="12" />
+                    <path d="M3.25,19.159a.75.75,0,1,0,.75.75.75.75,0,0,0-.75-.75Z" />
+                </svg>
+            </button>
+        </div>
 
         <div class="modal fade" id="modalMat1" tabindex="-1" aria-labelledby="modalMat1Label" aria-hidden="true">
             <div class="modal-dialog">
@@ -64,8 +93,22 @@
             $('#modalMat1').insertAfter($('body'));
         }
 
+        function avaliarMat1() {
+            var icone = document.getElementById('likeSQGMat1');
+            var filled = icone.getAttribute('fill');
+            if (filled == "#ffffff") {
+                icone.setAttribute("fill", "#de3e62");
+                localStorage.setItem('atividadesAvaliadas', 'Matemática Adição e Subtração');
+            }
+            else {
+                icone.setAttribute("fill", "#ffffff");
+                localStorage.removeItem('atividadesAvaliadas');
+            }
+        }
+
         document.getElementById('btnEnviar').addEventListener('click', cadastrarNota);
         document.getElementById('btnVisualizar').addEventListener('click', imprimeNota);
+        document.getElementById('likeMat1').addEventListener('click', avaliarMat1);
 
     </script>
 </body>
