@@ -56,6 +56,7 @@
                 <li id="area-pais"><a href="#">Área dos pais</a></li>
                 <li id="area-professor"><a href="#">Área Professores</a></li>
                 <li id="contato-btn"><a href="#">Contato</a></li>
+                <li id="sobre-btn"><a href="#">Sobre</a></li>
             </ul>
         </nav>
 
@@ -85,6 +86,7 @@
                 <div id="conteudoPort2" class="main-content"></div>
                 <div id="conteudoPais" class="main-content"></div>
                 <div id="contato" class="main-content"></div>
+                <div id="sobre" class="main-content"></div>
             </div>
 
             <!-- <footer>@Copyright 2021 - Aprendizado de Crianças PUC-MINAS</footer> -->
@@ -123,8 +125,10 @@
             $("#conteudoPais").hide();
             $("#contato").load("./paginas/formularioContato/index.html");
             $("#contato").hide();
+            $("#sobre").load("./paginas/sobre/sobre.html");
+            $("#sobre").hide();
 
-            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2","#conteudoPais", "#contato"];
+            const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2","#conteudoPais", "#contato", "#sobre"];
 
             $("#home-btn").click(function () {
                 $("#conteudoDash").show();
@@ -241,6 +245,17 @@
                 $('#contato').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
                     if (pages[i] != "#contato") {
+                        $(pages[i]).hide();
+                    }
+                }
+            });
+
+            $("sobre-btn").click(function () {
+                $("#sobre").show();
+                $('#sobre').removeClass('show');
+                $('#sobre').addClass('hide');
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i] != "#sobre") {
                         $(pages[i]).hide();
                     }
                 }
