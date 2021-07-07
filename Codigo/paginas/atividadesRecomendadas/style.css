@@ -9,6 +9,7 @@
     flex-direction: column !important;
     align-items: flex-start !important;
     justify-content: start !important;
+    /* padding-top: 40px; */
     background: transparent;
     width: 100%;
     max-width: 100% !important;
@@ -17,6 +18,10 @@
 
 .container-web #titleWeb {
     margin: 1rem;
+}
+
+#bigTitle {
+    font-weight: bold !important;
 }
 
 .content-card {
