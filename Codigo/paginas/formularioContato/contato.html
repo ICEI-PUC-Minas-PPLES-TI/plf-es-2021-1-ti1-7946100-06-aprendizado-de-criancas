@@ -3,18 +3,20 @@
 
 <head>
     <title>--Formulário Contato--</title>
-    <meta charset="utf-8" />
-    <!-- <link href="style.css" rel="stylesheet" media="all" /> -->
 </head>
 <style>
     #titulo {
         font-family: sans-serif;
-        color: #144d7c;
+        color: #0062a9;
     }
 
-    #subtitulo {
+    #subtitulo, #mensagemSucesso {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        color: #003cff;
+        color: #de3e62;
+    }
+
+    #mensagemSucesso {
+        font-size: 18px;
     }
 
     fieldset {
@@ -22,10 +24,11 @@
     }
 
     .container {
-        background-color: #F0F8FF;
+        padding: 8px;
+        background-color: transparent;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 1em;
-        color: aqua;
+        color: #0062a9;
         justify-content: center;
     }
 
@@ -40,22 +43,17 @@
         margin-bottom: 1em;
     }
 
-    .campo label {
-        margin-bottom: 0.2em;
-        color: #48429D;
-    }
-
-    .form-contact {
+   .form-contact {
         width: 100%;
         font-family: "Arial", Times, serif;
     }
 
     .form-contact-input {
         width: 100%;
-        color: #292929;
+        color: #0062a9;
         font-size: 18px;
         background-color: #E9E9E9;
-        border: 1px solid #E9E9E9;
+        border: 1px solid #0062a9;
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
         border-radius: 5px;
@@ -68,10 +66,10 @@
 
     .form-contact-textarea {
         width: 100%;
-        color: #292929;
+        color: #0062a9;
         font-size: 18px;
         background-color: #E9E9E9;
-        border: 1px solid #E9E9E9;
+        border: 1px solid #0062a9;
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
         border-radius: 5px;
@@ -115,23 +113,24 @@
 </style>
 
 <body>
-    <div>
+    <div style="width:100%" class="p-3">
         <h1 id="titulo" class="pt-2 text-center">Sujestões</h1><br>
-        <p id="subtitulo" class="p-3  text-center">Deixe registrado aqui sua sujestão para melhoria de nossos serviços!</p>
+        <p id="subtitulo" class="p-1 text-center">Deixe registrado aqui sua sujestão para melhoria de nossos serviços!</p>
+        <p id="mensagemSucesso" class="p-0 text-center"></p>
         <br>
-        <div class="d-flex justify-content-center">
-            <fieldset class="grupo">
-                <div class="container justify-content-center">
-                    <form action="#" class="form-contact" method="post" tabindex="1">
+        <div class="d-flex justify-content-center " style="width:100%">
+            <fieldset class="grupo" style="width:100%">
+                <div class="container justify-content-center" style="width:100%">
+                    <form action="#" class="form-contact" method="post" tabindex="1" style="width:100%;display: flex; flex-direction: column; align-items: center;">
                         <input type="text" id="Nome" class="form-contact-input" name="nome" placeholder="Nome"
-                            required />
+                            required onclick="limpaMsgSucesso()"/>
                         <input type="email" id="Email" class="form-contact-input" name="email" placeholder="Email"
                             required />
                         <input type="tel" id="Tel" class="form-contact-input" name="tel"
                             placeholder="Telefone (xx) xxxxx-xxxx" />
                         <textarea id="Mensagem" class="form-contact-textarea" name="conteudo"
                             placeholder="Deixe uma mensagem" required></textarea>
-                        <button id="BotaoEnvioContato" type="submit" class="form-contact-button">Enviar</button>
+                        <button id="BotaoEnvioContato" type="button" class="btn btn-dark" style="width:180px;height:40px;font-size:16px;margin: 0 auto">Enviar</button>
                     </form>
                 </div>
             </fieldset>
@@ -153,8 +152,14 @@
             return objDados;
         }
 
+        function limpaMsgSucesso(){
+            document.getElementById("mensagemSucesso").innerText = "";
+        }
+
         function salvaDados(dados) {
             localStorage.setItem('contato', JSON.stringify(dados));
+            document.getElementById("mensagemSucesso").innerText = "Mensagem Enviada com Sucesso!";
+            limpaDados();
         }
 
         function incluiContato() {
@@ -171,9 +176,15 @@
                 mensagem: mensagemInput
             };
 
-            objDados.contato.push(novoContato)
-            salvaDados(objDados)
-            alert('Mensagem enviada com sucesso.') 
+            objDados.contato.push(novoContato);
+            salvaDados(objDados);
+        }
+
+        function limpaDados(){
+            document.getElementById('Nome').value = '';
+            document.getElementById('Email').value = '';
+            document.getElementById('Tel').value = '';
+            document.getElementById('Mensagem').value = '';
         }
 
         document.getElementById('BotaoEnvioContato').addEventListener('click', incluiContato);
