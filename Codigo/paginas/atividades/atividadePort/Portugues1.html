@@ -136,13 +136,16 @@
           score = score + 20;
         }
       }
-      localStorage.setItem('Pontuacao', score);
-      //console.log(score);
+      var notas = JSON.parse(localStorage.getItem("pontuacao"));
+      notas.Portugues1 = score;
+
+      localStorage.setItem('pontuacao', JSON.stringify(notas));
     });
 
     function imprimeNota() {
-      let text = localStorage.getItem('NotaPor1');
-      document.getElementById('divText').innerHTML = `Sua nota total foi ${text}!`;
+      var notas = JSON.parse(localStorage.getItem("pontuacao"));
+      var notaPort = notas.Portugues1;
+      document.getElementById('divText').innerHTML = `Sua nota total foi ${notaPort}!`;
       $('#modalPortugues').insertAfter($('body'));
     }
 

@@ -2,70 +2,72 @@
 <html lang="pt-br">
 
 <head>
-    <title>"pontos" Template screen</title>
+    <title>"perfil" Template screen</title>
 </head>
 
 <body>
-    <div id="#Perfil" class="row mt-4" style="width: 100%; height: auto; padding: 10px">
+    <div id="#Perfil" class="row pt-4 container" style="width:100%;height:auto;color:black;background-color:transparent;padding:10px;display: flex; flex-direction: column; align-items: center;">
         <!-- Avatar content-->
         <div class="col-12 col-sm-12 col-md-12 col-lg-8">
             <div class="chooseAvatar row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-4" style="width: 100%; display: flex; justify-content: space-between;">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-4"
+                    style="width: 100%; display: flex; justify-content: space-between;">
                     <div>
                         <div id="perfilFoto">
-                            <img src="https://picsum.photos/id/555/70"
-                            class="imgPerfil" alt="Perfil" id="perfilSelec">
+                            <img src="assets/imgDashboard/monstro3-200px.png" class="imgPerfil" alt="Perfil" id="perfilSelec" width="60px">
+                            <p class="nome" id="NomeUsuario"></p>
                         </div>
-                        <p class="nome">Nome Sobrenome</p>
                     </div>
                     <div>
-                        <h5 class="npontos">Moedas: <span class="pontos">0</span></h5>
-                        <h5 class="npontos">Nível: <span class="pontos">1</span></h5>
+                        <h5 class="npontos">Moedas: <span id="moedas" class="pontos"></span></h5>
+                        <h5 class="npontos">Nível: <span id="nivel" class="pontos"></span></h5>
                     </div>
                 </div>
-                
+
                 <div class="row avatarContent">
                     <h6>Avatares:</h6>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
-                        <span class="selectAvatar">
-                            <span class="selectAvatar mb-2">
-                                <img id="avatar1" src="https://picsum.photos/id/555/70"
-                                class="avatarUnlocked imgPerfil" alt="Perfil">
-                            </span>
-                            <br />
-                            <span>liberado</span>
-                        </span>
+                        <button type="button" onclick="setarAvatar('avatar1')" class="selectAvatar mb-3" style="width: 60px; height: 60px;border: none; background-color: transparent;">
+                            <div class="selectAvatar mb-2">
+                                <img id="avatar1" src="assets/imgDashboard/monstro3-200px.png" class="avatarUnlocked imgPerfil"
+                                    alt="Perfil" width="60px">
+                            </div>
+                        </button>
+                        <div>liberado</div>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
-                        <span class="selectAvatar mb-2" >
-                            <img id="avatar2" src="https://picsum.photos/id/237/70"
-                            class="avatarUnlocked imgPerfil" alt="Perfil">
-                        </span>
-                        <br />
-                        <span>liberado</span>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-2" >
-                        <span class="selectAvatar mb-2" data-toggle="tooltip" data-placement="top" title="Este avatar ainda está bloqueado">
-                            <img id="avatar3" src="https://picsum.photos/id/1003/70"
-                            class="avatarLocked imgPerfil" alt="Perfil">
-                        </span>
-                        <br />
-                        <span>1000 <i class="fas fa-coins" style="font-size:25px"></i></span>
+                        <button type="button" onclick="setarAvatar('avatar2')" class="selectAvatar mb-3" style="width: 60px; height: 60px;border: none; background-color: transparent;">
+                            <div class="selectAvatar mb-2">
+                                <img id="avatar2" src="assets/imgDashboard/monstro5-200px.png" class="avatarUnlocked imgPerfil"
+                                    alt="Perfil" width="60px">
+                            </div>
+                        </button>
+                        <div>liberado</div>
                     </div>
                     <div class="col-6 col-sm-6 col-md-4 col-lg-2">
-                        <span class="selectAvatar mb-2" data-toggle="tooltip" data-placement="top" title="Este avatar ainda está bloqueado">
-                            <img id="avatar4" src="https://picsum.photos/id/1074/70"
-                                class="avatarLocked imgPerfil" alt="Perfil">
-                       </span>
-                       <br />
-                       <span>1500 <i class="fas fa-coins" style="font-size:25px"></i></span>
+                        <button type="button" onclick="avatarBloqueado()" class="selectAvatar mb-3" style="width: 60px; height: 60px;border: none; background-color: transparent;">
+                            <div class="selectAvatar mb-2">
+                                <img id="avatar3" src="assets/imgDashboard/montro1-200px.png" class="imgPerfil"
+                                    alt="Perfil" width="50px">
+                            </div>
+                        </button>
+                        <div>1500 moedas</div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-2">
+                        <button type="button" onclick="avatarBloqueado()" class="selectAvatar mb-3" style="width: 60px; height: 60px;border: none; background-color: transparent;">
+                            <div class="selectAvatar mb-2">
+                                <img id="avatar4" src="assets/imgDashboard/monstro6-200px.png" class="imgPerfil"
+                                    alt="Perfil" width="60px">
+                            </div>
+                        </button>
+                        <div>3000 moedas</div>
                     </div>
                 </div>
             </div>
 
             <!--Recommendations-->
-            
-            <div class="mt-4">
+
+            <div class="mt-4 pt-4">
                 <div class="recommendations">
                     <h4 id="contentTitle" class="border-bottom">Continue Aprendendo:</h4>
                     <div class="row">
@@ -76,7 +78,8 @@
                                         <h5 class="card-title">Advinhe a Palavra</h5>
                                         <p>Português</p>
                                     </div>
-                                    <img class="card-img-top" src="./assets/imgDashboard/advinhePalavra.png" alt="Card image cap">
+                                    <img class="card-img-top" src="./assets/imgDashboard/advinhePalavra.png"
+                                        alt="Card image cap">
                                     <div class="card-text">
                                         <button class="btn btn-primary">Fazer atividade</button>
                                     </div>
@@ -88,7 +91,8 @@
                                         <h5 class="card-title">Caça Palavras</h5>
                                         <p>Português</p>
                                     </div>
-                                    <img class="card-img-top" src="./assets/imgDashboard/cacaPalavra.png" alt="Card image cap">
+                                    <img class="card-img-top" src="./assets/imgDashboard/cacaPalavra.png"
+                                        alt="Card image cap">
                                     <div class="card-text">
                                         <button class="btn btn-primary">Fazer atividade</button>
                                     </div>
@@ -108,33 +112,53 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            /*$('[data-toggle="tooltip"]').tooltip();
+        var icone = document.getElementById("perfilSelec");
+        var perfil = localStorage.getItem("perfil");
+        icone.setAttribute("src", JSON.parse(perfil));
 
-            $("#avatar2").click(function(){
-                var codigo = $("#avatar2").clone();
-                $("#perfilFoto").empty();
-                $("#perfilFoto").append(codigo); 
-            });
+        var userName = document.getElementById("NomeUsuario");
+        var NomeUsuario = localStorage.getItem("userLogado");
+        userName.innerText = JSON.parse(NomeUsuario);
 
-            $("#avatar1").click(function(){
-                var codigo = $("#avatar1").clone();
-                $("#perfilFoto").empty();
-                $("#perfilFoto").append(codigo); 
-            });// ver se é necessário esse código*/
+        function setarAvatar(id){
+            var perfilAtual = icone.getAttribute("src");
+            var itemClicado = document.getElementById(id);
+            var srcClicado = itemClicado.getAttribute("src");
+            if(perfilAtual != srcClicado){
+                if ((confirm("Quer usar essa foto de perfil?")) == true) {
+                    icone.setAttribute("src", srcClicado);
+                    localStorage.setItem("perfil", JSON.stringify(srcClicado));
+                } 
+            } else {
+                alert("O avalar selecionado já está sendo utilizado!")
+            }
+        };
 
-            //let ponto = parseInt($(".pontos").text()); 
-            //$(".pontos").text(); //recuperar do local storage e colocar dentro de text() quando conseguirem pegar os pontos
-            $("#perfilSelec").attr("src", (localStorage.getItem("avatar")));
-            $(".avatarUnlocked").click(function(){
-                if(($(this).attr("src")!=$("#perfilSelec").attr("src"))==true){
-                    if ((confirm("Quer usar essa foto de perfil?"))==true){
-                        $("#perfilSelec").attr("src", ($(this).attr("src")));
-                        localStorage.setItem("avatar",($(this).attr("src")));
-                    }
-                }
-            });
-        });
+        function avatarBloqueado(){
+            alert("Este avatar ainda está bloqueado! Consiga mais pontos com as atividades!")
+        }
+
+        function calcularMoedas(){
+            const notas = JSON.parse(localStorage.getItem("pontuacao"));
+            const somaTotal = notas.Portugues1 + notas.Portugues2 + notas.Matematica1 + notas.Matematica2;
+            document.getElementById("moedas").innerText = somaTotal;
+            calcularNivel(somaTotal);
+        }
+
+        function calcularNivel(valor){
+            if(valor < 100){
+                document.getElementById("nivel").innerText = 1;
+            } else if(valor > 100 && valor <= 200){
+                document.getElementById("nivel").innerText = 2;
+            } else if(valor > 200 && valor <= 300){
+                document.getElementById("nivel").innerText = 3;
+            } else {
+                document.getElementById("nivel").innerText = 4;
+            }
+        }
+
+        calcularMoedas();
+
     </script>
 </body>
 

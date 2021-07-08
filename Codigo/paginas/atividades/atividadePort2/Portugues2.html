@@ -188,11 +188,9 @@
     };
 
     function cadastrarNotaPort2() {
-      if (localStorage.getItem('notaPort2') !== null) {
-        localStorage.removeItem('notaPort2');
-      }
-
-      localStorage.setItem('notaPort2', pontos);
+      var notas = JSON.parse(localStorage.getItem("pontuacao"));
+      notas.Portugues2 = pontos;
+      localStorage.setItem("pontuacao", JSON.stringify(notas)); 
     }
 
     function jogarNovamente() {

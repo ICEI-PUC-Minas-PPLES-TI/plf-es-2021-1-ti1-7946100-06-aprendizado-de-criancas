@@ -255,11 +255,12 @@
     <script>
         function gravarDadosInicias(){
           const userInicial = [{"user": "admin", "senha": "admin"}];
+          const userLogado = "admin";
           const pontuacaoInicial = {
-                "Matematica1": 20,
-                "Matematica2": 40,
-                "Portugues1": 50,
-                "Portugues2": 100
+                "Matematica1": 30,
+                "Matematica2": 100,
+                "Portugues1": 20,
+                "Portugues2": 40
           };
           const perfil = "assets/imgDashboard/monstro3-200px.png";
           const atividadesRecomendadas = {};
@@ -269,6 +270,7 @@
           localStorage.setItem("perfil", JSON.stringify(perfil));
           localStorage.setItem("atividadesRecomendadas", JSON.stringify(atividadesRecomendadas));
           localStorage.setItem("atividadesFavoritas", JSON.stringify(atividadesFavoritas));
+          localStorage.setItem("userLogado", JSON.stringify(userLogado));
         };
         gravarDadosInicias();
 

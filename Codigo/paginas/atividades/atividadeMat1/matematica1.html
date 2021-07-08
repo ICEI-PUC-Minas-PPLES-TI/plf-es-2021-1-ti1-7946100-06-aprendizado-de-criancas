@@ -16,10 +16,10 @@
 
         <form class="form mt-4 mb-2" style="width:100%; display: flex; flex-direction: column; align-items: center">
             <div class="form-group" style="width: 70%">
-                <input type="text" id="nota1" class="form-control form-control-sm mb-2" autocomplete="off"
+                <input type="text" id="notaMat1" class="form-control form-control-sm mb-2" autocomplete="off"
                     placeholder="Digite a nota da Atividade de Adição"
                     style="background-color:transparent;border:2px dashed #de3e62;height: 40px; font-size: 15px; color: #0062a9; font-weight: bold;" />
-                <input type="text" id="nota2" class="form-control form-control-sm mb-2" autocomplete="off"
+                <input type="text" id="notaMat2" class="form-control form-control-sm mb-2" autocomplete="off"
                     placeholder="Digite a nota da Atividade de Subtração"
                     style="background-color:transparent;border:2px dashed #de3e62;height: 40px; font-size: 15px; color: #0062a9; font-weight: bold;" />
             </div>
@@ -78,18 +78,17 @@
     <script src="./script.js"></script>
     <script>
         function cadastrarNota() {
-            if (localStorage.getItem('notaMat1') !== null) {
-                localStorage.removeItem('notaMat1');
-            }
+            var notas = JSON.parse(localStorage.getItem("pontuacao"));
 
-            let nota = Number(document.getElementById('notaMat1').value) + Number(document.getElementById('notaMat1').value);
+            notas.Matematica1 = Number(document.getElementById('notaMat1').value) + Number(document.getElementById('notaMat2').value);
 
-            localStorage.setItem('notaMat1', nota);
+            localStorage.setItem("pontuacao", JSON.stringify(notas));
         }
 
         function imprimeNota() {
-            let text = localStorage.getItem('notaMat1');
-            document.getElementById('divTextMat1').innerHTML = `Sua nota total foi ${text}!`;
+            var notas = JSON.parse(localStorage.getItem("pontuacao"));
+            let notaMat = notas.Matematica1;
+            document.getElementById('divTextMat1').innerHTML = `Sua nota total foi ${notaMat}!`;
             $('#modalMat1').insertAfter($('body'));
         }
 

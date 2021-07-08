@@ -69,18 +69,18 @@
     <script src="script.js"></script>
     <script>
         function cadastrarNota() {
-            if (localStorage.getItem('notaMat2') !== null) {
-                localStorage.removeItem('notaMat2');
-            }
+            var notas = JSON.parse(localStorage.getItem("pontuacao"));
 
-            let nota = Number(document.getElementById('nota1mat2').value) + Number(document.getElementById('nota2mat2').value);
-            localStorage.setItem('notaMat2', nota);
+            notas.Matematica2 = Number(document.getElementById('nota1mat2').value) + Number(document.getElementById('nota2mat2').value);
+
+            localStorage.setItem("pontuacao", JSON.stringify(notas));
         }
 
         function imprimeNota() {
-            let text = localStorage.getItem('notaMat2');
-            document.getElementById('divTextMat2').innerHTML = `Sua nota total foi ${text}!`;
-            $('#modalMat2').insertAfter($('body'));
+            var notas = JSON.parse(localStorage.getItem("pontuacao"));
+            let notaMat = notas.Matematica2;
+            document.getElementById('divTextMat2').innerHTML = `Sua nota total foi ${notaMat}!`;
+            $('#modalMat1').insertAfter($('body'));
         }
 
         function avaliarMat2() {
