@@ -18,6 +18,7 @@
                     <div class="row justify-content-center"><img src="../../assets/imgDashboard/logo200px.png" width="100px" id="logo" alt="Logo"></div>
                     <div class="form-group">
                       <h3 class="text-center pb-4">Cadastro</h3>
+                      <p id="mensagemSucesso" class="p-0 text-center" style="color: #0062a9; font-weight: bold;"></p>
                       <input type="user" class="form-control" id="cadastroUser" aria-describedby="userHelp" placeholder="Usuário">
                     </div>
                     <div class="form-group">
@@ -26,7 +27,11 @@
                     <div class="form-group">
                       <input type="password" class="form-control" id="confirmarSenha" placeholder="Confirme a senha">
                       <br>
-                    <div id='btnCadastrar'><button type="submit" class="btn btn-primary btn-block" >Cadastrar</button></div>
+                    </div>
+                    <p id="mensagemErro" class="p-0 m-0 text-center" style="color: red; font-weight: bold;"></p>
+                    <div id='btnCadastrar'>
+                        <button type="submit" class="btn btn-primary btn-block" >Cadastrar</button>
+                    </div>
                     <p class="signUp"><a href="login.html">Já tem uma conta? Volte para Login!</a></p>
                     <p class="homeLink"><a href="../../index.html">Voltar para Home!</a></p>
                   </form>
@@ -42,15 +47,21 @@ integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0
 crossorigin="anonymous"></script>
 <script>
 
-users = JSON.parse(localStorage.getItem('usuarios'));
+var users = JSON.parse(localStorage.getItem('usuarios'));
 
-function verificaCadastrado(dados){
-    return 0;
+function verificaCadastrado(user){
+    var retorno = 0;
+    for(var i = 0; i < users.length; i++){
+        if(users[i].user == user){
+          retorno = 1;
+        }
+    }  
+    return retorno;
 }
 
 function incluiLogin(){
-    let strUsuario = document.getElementById('cadastroUser').value;
-    let strSenha = document.getElementById('cadastroSenha').value;
+    var strUsuario = document.getElementById('cadastroUser').value;
+    var strSenha = document.getElementById('cadastroSenha').value;
 
     if((document.getElementById('cadastroUser').value == "")||(document.getElementById('cadastroSenha').value == "")||(document.getElementById('confirmarSenha').value == "")){
         alert('Não deixe nenhum campo vazio.')
@@ -68,10 +79,11 @@ function incluiLogin(){
                     user: strUsuario,
                     senha: strSenha
                 };
-                let jaCadastrado = verificaCadastrado(novoLogin);
+                let jaCadastrado = verificaCadastrado(strUsuario);
                 if(jaCadastrado == 0){
                     users.push(novoLogin);
                     localStorage.setItem("usuarios", JSON.stringify(users));
+                    alert("Cadastro Realizado com Sucesso. Volte para Login");
                 } else {
                     alert('Este usuário já está cadastrado!');
                 }
