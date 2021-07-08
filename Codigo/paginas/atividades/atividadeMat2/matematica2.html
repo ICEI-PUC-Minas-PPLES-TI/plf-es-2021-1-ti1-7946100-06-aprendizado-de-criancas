@@ -86,13 +86,16 @@
         function avaliarMat2() {
             var icone = document.getElementById('likeSQGMat2');
             var filled = icone.getAttribute('fill');
+            var favoritas = JSON.parse(localStorage.getItem("atividadesFavoritas"));
             if (filled == "#ffffff") {
                 icone.setAttribute("fill", "#de3e62");
-                localStorage.setItem('atividadesAvaliadas', 'Matemática Múltiplicação e Divisão');
+                favoritas.push("Matematica2");
+                localStorage.setItem("atividadesFavoritas", JSON.stringify(favoritas));
             }
             else {
                 icone.setAttribute("fill", "#ffffff");
-                localStorage.removeItem('atividadesAvaliadas');
+                favoritas.splice(favoritas.indexOf("Matematica2"), 1);
+                localStorage.setItem("atividadesFavoritas", JSON.stringify(favoritas));
             }
         }
 

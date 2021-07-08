@@ -95,13 +95,16 @@
         function avaliarMat1() {
             var icone = document.getElementById('likeSQGMat1');
             var filled = icone.getAttribute('fill');
+            var favoritas = JSON.parse(localStorage.getItem("atividadesFavoritas"));
             if (filled == "#ffffff") {
                 icone.setAttribute("fill", "#de3e62");
-                localStorage.setItem('atividadesAvaliadas', 'Matemática Adição e Subtração');
+                favoritas.push("Matematica1");
+                localStorage.setItem("atividadesFavoritas", JSON.stringify(favoritas));
             }
             else {
                 icone.setAttribute("fill", "#ffffff");
-                localStorage.removeItem('atividadesAvaliadas');
+                favoritas.splice(favoritas.indexOf("Matematica1"), 1);
+                localStorage.setItem("atividadesFavoritas", JSON.stringify(favoritas));
             }
         }
 

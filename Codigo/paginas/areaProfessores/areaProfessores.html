@@ -31,7 +31,6 @@
                         <img class="card-img-top" src="./assets/imgDashboard/advinhePalavra.png" alt="Card image cap">
                         <div class="card-bottom">
                             <button data-bs-toggle="modal" data-bs-target="#modalAtv" class="btn btn-primary">Recomendar</button>
-                             
                         </div>
                     </div>
                 </div>
@@ -72,7 +71,6 @@
                         <div class="card-bottom">
                             <button data-bs-toggle="modal" data-bs-target="#modalAtv" target="_blank"
                                 class="btn btn-primary">Recomendar</button>
-                             
                         </div>
                     </div>
                 </div>
@@ -131,6 +129,12 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             crossorigin="anonymous"></script>
+        <script>
+            var favoritas = JSON.parse(localStorage.getItem("atividadesFavoritas"));
+            
+                favoritas.push("Matematica1");
+                localStorage.setItem("atividadesFavoritas", JSON.stringify(favoritas));
+        </script>
 </body>
 
 </html>
