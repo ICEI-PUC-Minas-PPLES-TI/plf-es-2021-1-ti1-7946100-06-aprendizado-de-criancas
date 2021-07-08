@@ -97,25 +97,16 @@
             $('[data-toggle="tooltip"]').tooltip();
 
             $("#conteudoDash").load("./paginas/dashboard/dashboard.html");
-            $("#conteudoPort").load("./paginas/atividades/atividadePort/Portugues1.html");
             $("#conteudoPort").hide();
-            $("#conteudoMat1").load("./paginas/atividades/atividadeMat1/matematica1.html");
             $("#conteudoMat1").hide();
-            $("#conteudoMat2").load("./paginas/atividades/atividadeMat2/matematica2.html");
             $("#conteudoMat2").hide();
-            $("#conteudoPerfil").load("./paginas/pontos-perfil/perfil.html");
             $("#conteudoPerfil").hide();
-            $("#conteudoAtvRecom").load("./paginas/atividadesRecomendadas/atividadesRecomendadas.html");
             $("#conteudoAtvRecom").hide();
-            $("#recomendarAtividades").load("./paginas/areaProfessores/areaProfessores.html");
             $("#recomendarAtividades").hide();
-            $("#conteudoPort2").load("./paginas/atividades/atividadePort2/Portugues2.html");
             $("#conteudoPort2").hide();
             $("#conteudoPais").load("./paginas/areaPais/areaPais.html");
             $("#conteudoPais").hide();
-            $("#contato").load("./paginas/formularioContato/contato.html");
             $("#contato").hide();
-            $("#sobre").load("./paginas/sobre/sobre.html");
             $("#sobre").hide();
 
             const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2","#conteudoPais", "#contato", "#sobre"];
@@ -133,6 +124,7 @@
 
             $("#atv-port-btn").click(function () {
                 $("#conteudoPort").show();
+                $("#conteudoPort").load("./paginas/atividades/atividadePort/Portugues1.html");
                 $('#contentToggle').removeClass('show');
                 $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
@@ -144,6 +136,7 @@
 
             $("#atv-mat1-btn").click(function () {
                 $("#conteudoMat1").show();
+                $("#conteudoMat1").load("./paginas/atividades/atividadeMat1/matematica1.html");
                 $('#contentToggle').removeClass('show');
                 $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
@@ -155,6 +148,7 @@
 
             $("#atv-mat2-btn").click(function () {
                 $("#conteudoMat2").show();
+                $("#conteudoMat2").load("./paginas/atividades/atividadeMat2/matematica2.html");
                 $('#contentToggle').removeClass('show');
                 $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
@@ -166,6 +160,7 @@
 
             $("#atv-recom-btn").click(function () {
                 $("#conteudoAtvRecom").show();
+                $("#conteudoAtvRecom").load("./paginas/atividadesRecomendadas/atividadesRecomendadas.html");
                 $('#contentToggle').removeClass('show');
                 $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
@@ -177,6 +172,7 @@
 
             $("#perfil-btn").click(function () {
                 $("#conteudoPerfil").show();
+                $("#conteudoPerfil").load("./paginas/pontos-perfil/perfil.html");
                 $('#contentToggle').removeClass('show');
                 $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
@@ -188,6 +184,7 @@
 
             $("#area-professor").click(function () {
                 $("#recomendarAtividades").show();
+                $("#recomendarAtividades").load("./paginas/areaProfessores/areaProfessores.html");
                 $('#contentToggle').removeClass('show');
                 $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
@@ -199,6 +196,7 @@
 
             $("#atv-port2-btn").click(function () {
                 $("#conteudoPort2").show();
+                $("#conteudoPort2").load("./paginas/atividades/atividadePort2/Portugues2.html");
                 $('#contentToggle').removeClass('show');
                 $('#contentToggle').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
@@ -219,6 +217,7 @@
             });
             
             $("#area-pais").click(function () {
+               // $("#conteudoPais").empty();
                 $("#conteudoPais").show();
                 $('#contentToggle').removeClass('show');
                 $('#contentToggle').addClass('hide');
@@ -231,6 +230,7 @@
 
             $("#contato-btn").click(function () {
                 $("#contato").show();
+                $("#contato").load("./paginas/formularioContato/contato.html");
                 $('#contato').removeClass('show');
                 $('#contato').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
@@ -242,6 +242,7 @@
 
             $("#sobre-btn").click(function () {
                 $("#sobre").show();
+                $("#sobre").load("./paginas/sobre/sobre.html");
                 $('#sobre').removeClass('show');
                 $('#sobre').addClass('hide');
                 for (var i = 0; i < pages.length; i++) {
@@ -257,20 +258,33 @@
           const userInicial = [{"user": "admin", "senha": "admin"}];
           const userLogado = "admin";
           const pontuacaoInicial = {
-                "Matematica1": 30,
-                "Matematica2": 100,
-                "Portugues1": 20,
-                "Portugues2": 40
+                "Matematica1": 10,
+                "Matematica2": 10,
+                "Portugues1": 10,
+                "Portugues2": 10
           };
           const perfil = "assets/imgDashboard/monstro3-200px.png";
           const atividadesRecomendadas = [];
           const atividadesFavoritas = [];
-          localStorage.setItem("usuarios", JSON.stringify(userInicial));
-          localStorage.setItem("pontuacao", JSON.stringify(pontuacaoInicial));
-          localStorage.setItem("perfil", JSON.stringify(perfil));
-          localStorage.setItem("atividadesRecomendadas", JSON.stringify(atividadesRecomendadas));
-          localStorage.setItem("atividadesFavoritas", JSON.stringify(atividadesFavoritas));
-          localStorage.setItem("userLogado", JSON.stringify(userLogado));
+
+          if(localStorage.getItem("usuarios") == null){
+            localStorage.setItem("usuarios", JSON.stringify(userInicial));
+          }
+          if(localStorage.getItem("pontuacao") == null) {
+            localStorage.setItem("pontuacao", JSON.stringify(pontuacaoInicial));
+          }
+          if(localStorage.getItem("perfil") == null) {
+            localStorage.setItem("perfil", JSON.stringify(perfil));
+          }
+          if(localStorage.getItem("atividadesRecomendadas") == null) {
+            localStorage.setItem("atividadesRecomendadas", JSON.stringify(atividadesRecomendadas));
+          }
+          if(localStorage.getItem("atividadesFavoritas") == null) {
+            localStorage.setItem("atividadesFavoritas", JSON.stringify(atividadesFavoritas));
+          }
+          if(localStorage.getItem("userLogado") == null) {
+            localStorage.setItem("userLogado", JSON.stringify(userLogado));
+          }
         };
         gravarDadosInicias();
 

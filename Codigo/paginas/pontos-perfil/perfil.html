@@ -140,6 +140,7 @@
 
         function calcularMoedas(){
             const notas = JSON.parse(localStorage.getItem("pontuacao"));
+            console.log("notas", notas);
             const somaTotal = notas.Portugues1 + notas.Portugues2 + notas.Matematica1 + notas.Matematica2;
             document.getElementById("moedas").innerText = somaTotal;
             calcularNivel(somaTotal);

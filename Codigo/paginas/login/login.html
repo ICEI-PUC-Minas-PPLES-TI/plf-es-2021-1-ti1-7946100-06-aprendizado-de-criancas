@@ -25,15 +25,13 @@
           <br>
           <p class="forgPassword"><a href="#">Esqueci minha senha!<br></a></p>
           <p class="signUp"><a href="cadastro.html">Registre-se!</a></p>
-          <p class="signUp"><a href="../../index.html">Voltar para Home</a></p>
+          <p class="signUp" style="font-weight: bold;"><a href="../../index.html">Voltar para Home</a></p>
         </div>
         <div class="form-check">
           <input type="checkbox" class="form-check-input" id="manterConectado">
           <label class="form-check-label pb-3" for="exampleCheck1">Manter-se Conectado!</label>
         </div>
         <button type="submit" class="btn btn-primary btn-block" id='btnLogar'><a class="hyperColor">Entrar</a></button>
-        <!--<h5 class="pt-2 text-center">Ou entre com:</h5>
-                    <div class="row signInWith"><small>APIs</small></div>-->
       </form>
     </div>
   </div>
@@ -43,54 +41,28 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script>
-
-  function leDados() {
-    let strDados = localStorage.getItem('login');
-    let objDados = {};
-
-    if (strDados) {
-      objDados = JSON.parse(strDados);
-    }
-    else {
-      objDados = {
-        login: [
-        ]
-      }
-    }
-    return objDados;
-  }
+  var users = JSON.parse(localStorage.getItem("usuarios"));
 
   function fazLogin() {
-    let strUser = document.getElementById('loginUser').value
-    let strSenha = document.getElementById('loginSenha').value
-    let objDados = leDados()
+    let strUser = document.getElementById('loginUser').value;
+    let strSenha = document.getElementById('loginSenha').value;
+    
     if ((document.getElementById('loginUser').value == "") || (document.getElementById('loginSenha').value == "")) {
-      alert('Não deixe nenhum campo vazio.')
+      alert('Não deixe nenhum campo vazio!')
     }
-    else {
-      let jaCadastrado = 0
-      let logar = {
-        usuario: strUser,
-        senha: strSenha
-      };
-      for (i = 0; i < objDados.login.length; i++) {
-        if (logar == objDados.login[i]) {
-          jaCadastrado = 1
-          alert('Esse usuário já está cadastrado.')
+    else{
+      for(var i = 0; i <= users.length; i++){
+        if(users[i].user == strUser && users[i].senha == strSenha){
+          localStorage.setItem("userLogado", JSON.stringify(strUser));
+          alert("Login realizado com sucesso! Clique em Voltar para Home");
+          //window.location.href = "http://127.0.0.1:5501/Codigo/index.html";
         }
-      }
+      }      
     }
+
   }
 
-  function gravarDadosInicias(){
-    const userInicial = [{"user": "admin", "senha": "admin"}];
-    if(localStorage.getItem("usuarios") == null){
-      localStorage.setItem("usuarios", JSON.stringify(userInicial));
-    }
-  };
-
   document.getElementById('btnLogar').addEventListener('click', fazLogin);
-  gravarDadosInicias();
 
 </script>
 </body>
