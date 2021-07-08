@@ -1,0 +1,14 @@
+{
+    "usuarios": [
+        {"nome": "string", "senha": "string", "email":"string@string.com"}
+    ],
+    "pontuacao":   {
+        "Matematica1": 0,
+        "Matematica2": 0,
+        "Portugues1": 0,
+        "Portugues2": 0
+    },
+    "atividadesRecomendadas": ["string", "string"],
+    "atividadeFavoritas": ["string", "string"],
+    "perfil": "https://picsum.photos/id/555/70"  
+}

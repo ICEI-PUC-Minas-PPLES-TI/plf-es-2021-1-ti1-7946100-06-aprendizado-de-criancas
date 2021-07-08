@@ -57,12 +57,12 @@
         <div id="content" style="padding: 10px">
             <nav class="navbar navbar-expand-lg content-navbar mb-0">
                 <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="navbar-btn" >
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
-                    <a href='paginas/login/login.html'><button type="button" id="loginButton" class="login-btn" data-toggle="tooltip" data-placement="bottom" title="Login e Logout">
+                    <a href='paginas/login/login.html'><button type="button" id="loginButton" class="login-btn" data-toggle="tooltip" data-placement="bottom" title="Login e Cadastro">
                         <img src="assets/imgDashboard/monstro3-200px.png" width="50px" alt="perfil avatar"></a>
                     </button>
                 </div>
@@ -82,8 +82,6 @@
                 <div id="contato" class="main-content"></div>
                 <div id="sobre" class="main-content"></div>
             </div>
-
-            <!-- <footer>@Copyright 2021 - Aprendizado de Crianças PUC-MINAS</footer> -->
 
         </div>
 
@@ -109,7 +107,7 @@
             $("#conteudoPerfil").hide();
             $("#conteudoAtvRecom").load("./paginas/atividadesRecomendadas/atividadesRecomendadas.html");
             $("#conteudoAtvRecom").hide();
-            $("#recomendarAtividades").load("./paginas/gerenciarAtividades/index.html");
+            $("#recomendarAtividades").load("./paginas/areaProfessores/areaProfessores.html");
             $("#recomendarAtividades").hide();
             $("#conteudoPort2").load("./paginas/atividades/atividadePort2/Portugues2.html");
             $("#conteudoPort2").hide();
@@ -121,8 +119,6 @@
             $("#sobre").hide();
 
             const pages = ["#conteudoDash", "#conteudoMat1", "#conteudoMat2", "#conteudoPerfil", "#conteudoPort", "#conteudoAtvRecom", "#recomendarAtividades", "#conteudoPort2","#conteudoPais", "#contato", "#sobre"];
-
-        
 
             $("#home-btn").click(function () {
                 $("#conteudoDash").show();
@@ -256,6 +252,28 @@
             });
         });
     </script>
+    <script>
+        function gravarDadosInicias(){
+          const userInicial = [{"user": "admin", "senha": "admin"}];
+          const pontuacaoInicial = {
+                "Matematica1": 20,
+                "Matematica2": 40,
+                "Portugues1": 50,
+                "Portugues2": 100
+          };
+          const perfil = "assets/imgDashboard/monstro3-200px.png";
+          const atividadesRecomendadas = {};
+          const atividadesFavoritas = {};
+          localStorage.setItem("usuarios", JSON.stringify(userInicial));
+          localStorage.setItem("pontuacao", JSON.stringify(pontuacaoInicial));
+          localStorage.setItem("perfil", JSON.stringify(perfil));
+          localStorage.setItem("atividadesRecomendadas", JSON.stringify(atividadesRecomendadas));
+          localStorage.setItem("atividadesFavoritas", JSON.stringify(atividadesFavoritas));
+        };
+        gravarDadosInicias();
+
+    </script>
+
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 </body>
 

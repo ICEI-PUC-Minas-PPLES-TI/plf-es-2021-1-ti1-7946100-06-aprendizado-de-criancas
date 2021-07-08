@@ -6,7 +6,7 @@
 <body>
   <div id="conteudoPais" style = "width:100%; height: 100%;">
             <div class="userArea">
-            <img src="https://picsum.photos/id/555/70" alt="PerfilAvatar" id="avatarPerfil">
+            <img src="assets/imgDashboard/monstro3-200px.png" alt="PerfilAvatar" id="avatarPerfil" width="50px">
           </div>
           <div class="row">
             <div class="col-sm-6">
@@ -66,14 +66,20 @@
             <!--Google Charts-->
 
   <script>
-   const mediaGeral = 0.60*(300);                                  // Pegar nota Mat 2
-  const somaTotal = JSON.parse(localStorage.getItem("NotaPor1")) + JSON.parse(localStorage.getItem("NotaPor2")) + JSON.parse(localStorage.getItem("NotaMat2")) + JSON.parse(localStorage.getItem("NotaMat1"));
-  const mediaUser = JSON.parse(localStorage.getItem("NotaPor1")) + JSON.parse(localStorage.getItem("NotaPor2")) + JSON.parse(localStorage.getItem("NotaMat2")) + JSON.parse(localStorage.getItem("NotaMat1"))/3;
-  const mediaPortugues = (JSON.parse(localStorage.getItem("NotaPor1")) + JSON.parse(localStorage.getItem("NotaPor2")))/2;
-  const mediaMatematica =(JSON.parse(localStorage.getItem("NotaMat1")) + JSON.parse(localStorage.getItem("NotaMat2")))/2;
+
+  const notas = JSON.parse(localStorage.getItem("pontuacao"));
+
+  const somaTotal = notas.Portugues1 + notas.Portugues2 + notas.Matematica1 + notas.Matematica2;
+
+  const mediaUser = somaTotal/4;
+
+  const mediaPortugues = (notas.Portugues1 + notas.Portugues2)/2;
+
+  const mediaMatematica = (notas.Matematica1 + notas.Matematica2)/2;
 
   google.charts.load('current', {packages: ['corechart']});
   google.charts.setOnLoadCallback(drawChart);
+
   function drawChart(){
       const container = document.querySelector('#chart')
       const data = new google.visualization.arrayToDataTable([
@@ -92,8 +98,25 @@
   }
   /* Fim google Charts */
   // Supondo que cada atividade tenha 100 pontos max
+
+  function avaliarMat1() {
+            var icone = document.getElementById('likeSQGMat1');
+            var filled = icone.getAttribute('fill');
+            if (filled == "#ffffff") {
+                icone.setAttribute("fill", "#de3e62");
+                localStorage.setItem('atividadesAvaliadas', 'Matemática Adição e Subtração');
+            }
+            else {
+                icone.setAttribute("fill", "#ffffff");
+                localStorage.removeItem('atividadesAvaliadas');
+            }
+        }
   function carregaAreaPais(){
-      document.getElementById("avatarPerfil").src = localStorage.getItem("avatar");
+      var icone = document.getElementById("avatarPerfil");
+      var perfil = localStorage.getItem("perfil");
+      icone.setAttribute("src", JSON.parse(perfil));
+
+
       console.log(mediaMatematica);
       console.log(mediaPortugues);
       
@@ -106,12 +129,13 @@
       }
       
   
-      document.getElementById("notaPortugues1").innerHTML = JSON.parse(localStorage.getItem("NotaPor1"));
-      document.getElementById("notaPortugues2").innerHTML = JSON.parse(localStorage.getItem("NotaPor2"));
-      document.querySelector(".notaMatematica1").innerHTML = JSON.parse(localStorage.getItem("NotaMat1"));
-      document.querySelector(".notaMatematica2").innerHTML = JSON.parse(localStorage.getItem("NotaMat2"));
+      document.getElementById("notaPortugues1").innerHTML = notas.Portugues1;
+      document.getElementById("notaPortugues2").innerHTML = notas.Portugues2;
+      document.querySelector(".notaMatematica1").innerHTML = notas.Matematica1;
+      document.querySelector(".notaMatematica2").innerHTML = notas.Matematica2;
   }
-  document.getElementById("btn-areaPais").onclick = carregaAreaPais();
+  //document.getElementById("btn-areaPais").onclick = carregaAreaPais();
+  carregaAreaPais();
       // Colocar um continue Aprendendo!
 
 </script>
