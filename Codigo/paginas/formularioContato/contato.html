@@ -4,25 +4,17 @@
 <head>
     <title>--Formulário Contato--</title>
     <meta charset="utf-8" />
-    <link href="style.css" rel="stylesheet" media="all" />
+    <!-- <link href="style.css" rel="stylesheet" media="all" /> -->
 </head>
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
     #titulo {
         font-family: sans-serif;
         color: #144d7c;
-        margin-left: 45%;
-        margin-top: 1%;
     }
 
     #subtitulo {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: #003cff;
-        margin-left: 38%;
     }
 
     fieldset {
@@ -34,8 +26,6 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 1em;
         color: aqua;
-        margin-left: 36%;
-        margin-top: 2%;
         justify-content: center;
     }
 
@@ -53,17 +43,6 @@
     .campo label {
         margin-bottom: 0.2em;
         color: #48429D;
-        display: block
-    }
-
-    fieldset .grupo .campo {
-        float: left;
-        margin-right: 1em;
-    }
-
-    .container {
-        width: 50%;
-        margin: 0 auto;
     }
 
     .form-contact {
@@ -127,16 +106,22 @@
     .form-contact-button:hover {
         opacity: 1;
     }
+    @media screen and (min-width: 767px) {
+        
+        .grupo{
+            max-width: 30vw;
+        }
+    }
 </style>
 
 <body>
     <div>
-        <h1 id="titulo">Sujestões</h1><br>
-        <p id="subtitulo">Deixe registrado aqui sua sujestão para melhoria de nossos serviços!</p>
+        <h1 id="titulo" class="pt-2 text-center">Sujestões</h1><br>
+        <p id="subtitulo" class="p-3  text-center">Deixe registrado aqui sua sujestão para melhoria de nossos serviços!</p>
         <br>
-        <form>
+        <div class="d-flex justify-content-center">
             <fieldset class="grupo">
-                <div class="container">
+                <div class="container justify-content-center">
                     <form action="#" class="form-contact" method="post" tabindex="1">
                         <input type="text" id="Nome" class="form-contact-input" name="nome" placeholder="Nome"
                             required />
@@ -148,7 +133,9 @@
                             placeholder="Deixe uma mensagem" required></textarea>
                         <button id="BotaoEnvioContato" type="submit" class="form-contact-button">Enviar</button>
                     </form>
+                </div>
             </fieldset>
+        </div>
     </div>
     <script>
         function leDados() {

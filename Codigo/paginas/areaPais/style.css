@@ -26,9 +26,10 @@ td{
     background: rgba(9, 53, 172, 0.598);
     font-size:1em;
     color:white;
+
 }
 table{
-    width: 100%;
+    min-width: 100%;
 }
 table, th, td{
     content: center;
@@ -41,3 +42,15 @@ table, th, td{
     font-size: 1.2em;
 }
 
+@media (max-width: 767px){
+    #chart{
+        display: none;
+    }
+    table thead{
+        padding-left: 120px;
+        margin-left: 20px;
+    }
+    h2{
+        display: none;
+    }
+}

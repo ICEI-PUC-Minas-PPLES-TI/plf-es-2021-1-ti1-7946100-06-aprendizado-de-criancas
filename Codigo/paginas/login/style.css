@@ -1,7 +1,7 @@
 body{
     background: rgb(83, 150, 252);
+    overflow-x: hidden;
 }
-
 
 .form-container.loginPage{
     background-color:white;
@@ -9,20 +9,20 @@ body{
     border-radius: 10px;
     margin: auto;
     padding: 30px;
+    margin-top: 20%;
 }
 
 .form-container div{
     margin-bottom: 10px;
 }
+
 .form-container .form-group a{
     border-top: 10px;
 }
+
 .hyperColor{
     color: white;
 }
-
-
-
 
 @media (min-width: 992px) {
     .loginBg{
