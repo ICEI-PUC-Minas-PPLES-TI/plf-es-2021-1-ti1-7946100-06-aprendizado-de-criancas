@@ -1,0 +1,36 @@
+
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: Aprendizado de Crianças
+authors:
+  - family-names: Frade Sousa
+    given-names: Fabrício
+  - family-names: Fernandes de Oliveira
+    given-names: Gabriel
+  - family-names: Gomes Salles
+    given-names: Lucas
+  - family-names: Aires dos Santos
+    given-names: Pedro Lucas
+  - family-names: Reis de Souza
+    given-names: Pedro
+  - family-names: Bányai Pereira
+    given-names: Thilla
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: de Nardim
+    given-names: Luciana
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Vieira Carneiro
+    given-names: Rommel
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Alves Nogueira
+    given-names: Simone
+keywords:
+  - Aprendizado
+  - Crianças
+repository-code: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2021-1-ti1-7946100-06-aprendizado-de-criancas
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2021-06-20
